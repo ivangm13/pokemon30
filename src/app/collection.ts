@@ -1,5 +1,6 @@
 import { Component, computed, signal } from '@angular/core';
 import { CARDS, Card, Group } from './cards';
+import { User, onUser, login as cloudLogin, logout, loadCloud, saveCloud } from './cloud';
 
 type State = Record<string, 1 | 2>; // 1 = la tengo, 2 = la tengo repetida
 const KEY = 'pokemon30-collection';
@@ -14,6 +15,12 @@ const KEY = 'pokemon30-collection';
         <span><b>{{ owned() }}</b> / {{ total }} cartas</span>
         <span>{{ pct() }}%</span>
         <span>⧉ {{ dups() }} repetidas</span>
+        @if (user(); as u) {
+          <button class="alt on" (click)="logout()">☁ {{ u.displayName }} · Salir</button>
+        } @else {
+          <button (click)="login()">☁ Entrar con Google para sincronizar</button>
+        }
+        <small class="sync">{{ sync() }}</small>
       </div>
       <div class="bar"><i [style.width.%]="pct()"></i></div>
       <input type="search" placeholder="Buscar por nombre o número…" (input)="q.set($any($event.target).value)" />
@@ -86,6 +93,10 @@ export class Collection {
   readonly cards = CARDS;
   readonly total = CARDS.length;
   readonly state = signal<State>(this.load());
+  readonly user = signal<User | null>(null);
+  readonly sync = signal('Sin sesión: solo se guarda en este navegador');
+  login() { cloudLogin().catch(e => this.sync.set('Error de login: ' + (e.code || e.message))); }
+  readonly logout = logout;
   readonly q = signal('');
   readonly g = signal<Group | 'all'>('all');
   readonly st = signal<'all' | 'have' | 'missing' | 'dup'>('all');
@@ -111,6 +122,20 @@ export class Collection {
       (!q || c.name.toLowerCase().includes(q) || c.num.toLowerCase().includes(q)));
   });
 
+  constructor() {
+    onUser(async u => {
+      this.user.set(u);
+      if (!u) { this.sync.set('Sin sesión: solo se guarda en este navegador'); return; }
+      this.sync.set('Conectando con la nube…');
+      try {
+        const remote = await loadCloud(u.uid);
+        if (remote) this.set(remote, false);   // la nube manda
+        else await saveCloud(u.uid, this.state()); // primera vez: sube lo local
+        this.sync.set('☁ Sincronizado ✓');
+      } catch (e: any) { console.error(e); this.sync.set('Error nube: ' + (e.code || e.message)); }
+    });
+  }
+
   count(k: Group | 'all'): string {
     const s = this.state(), l = CARDS.filter(c => k === 'all' || c.group === k);
     return `${l.filter(c => s[c.id]).length}/${l.length}`;
@@ -126,7 +151,16 @@ export class Collection {
     if (s[id]) s[id] = s[id] === 2 ? 1 : 2;
     this.set(s);
   }
-  private set(s: State) { this.state.set(s); try { localStorage.setItem(KEY, JSON.stringify(s)); } catch {} }
+  private set(s: State, push = true) {
+    this.state.set(s);
+    try { localStorage.setItem(KEY, JSON.stringify(s)); } catch {}
+    const u = this.user();
+    if (push && u) {
+      this.sync.set('Guardando…');
+      saveCloud(u.uid, s).then(() => this.sync.set('☁ Guardado ✓'))
+        .catch((e: any) => { console.error(e); this.sync.set('Error al guardar: ' + (e.code || e.message)); });
+    }
+  }
   private load(): State { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } }
 
   exportData() {
