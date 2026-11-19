@@ -1,4 +1,5 @@
 import { CardSet, inRule, ruleVariants, variantId } from '../catalog';
+import { normalizeQuantity } from './quantity';
 
 export interface ModeStats { key: string; label: string; total: number; owned: number; missing: number; dups: number; pct: number; }
 
@@ -10,7 +11,7 @@ export function setStats(set: CardSet, qty: Record<string, number>): ModeStats[]
       if (!inRule(c, m.rule)) continue;
       for (const v of ruleVariants(c, m.rule)) {
         total++;
-        const q = qty[variantId(set.id, c.id, v.key)] || 0;
+        const q = normalizeQuantity(qty[variantId(set.id, c.id, v.key)]);
         if (q > 0) owned++;        // las repetidas no suman al porcentaje
         if (q > 1) dups += q - 1;
       }

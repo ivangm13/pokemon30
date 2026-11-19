@@ -1,0 +1,114 @@
+{
+  "generatedAt": "2026-11-19T10:21:25.582Z",
+  "audit": {
+    "totalCards": 191,
+    "validPrices": 191,
+    "pendingReview": 0,
+    "zeroPriceCards": 0,
+    "zeroTrendHoloCards": 191,
+    "cardsWithoutPriceData": 0,
+    "discrepancies": 0,
+    "cardsWithoutProductId": 0,
+    "invalidTrendCards": 0,
+    "valuationStates": {
+      "validated": 191
+    },
+    "variantCombinations": {
+      "normal": 86,
+      "holo": 105
+    },
+    "validationStates": {
+      "valid": 191
+    },
+    "variantStates": {
+      "valid": 191
+    },
+    "note": "La valoración utiliza el campo esperado y una correspondencia validada. Los ceros de métricas secundarias como trend-holo no invalidan trend.",
+    "processed": 191,
+    "successfullyValidated": 191,
+    "problems": 0,
+    "queryErrors": 0,
+    "expansionQueryErrors": 0
+  },
+  "sets": [
+    {
+      "set": {
+        "id": "30th",
+        "name": "Celebración 30.º Aniversario",
+        "language": null,
+        "cardCount": {
+          "firstEd": 0,
+          "holo": 75,
+          "normal": 86,
+          "official": 128,
+          "reverse": 0,
+          "total": 161
+        }
+      },
+      "summary": {
+        "totalCards": 161,
+        "validPrices": 161,
+        "pendingReview": 0,
+        "zeroPriceCards": 0,
+        "zeroTrendHoloCards": 161,
+        "cardsWithoutPriceData": 0,
+        "discrepancies": 0,
+        "cardsWithoutProductId": 0,
+        "invalidTrendCards": 0,
+        "valuationStates": {
+          "validated": 161
+        },
+        "variantCombinations": {
+          "normal": 86,
+          "holo": 75
+        },
+        "validationStates": {
+          "valid": 161
+        },
+        "variantStates": {
+          "valid": 161
+        },
+        "note": "La valoración utiliza el campo esperado y una correspondencia validada. Los ceros de métricas secundarias como trend-holo no invalidan trend."
+      }
+    },
+    {
+      "set": {
+        "id": "30th-c",
+        "name": "Colección Clásica del 30.º Aniversario",
+        "language": null,
+        "cardCount": {
+          "firstEd": 0,
+          "holo": 30,
+          "normal": 0,
+          "official": 30,
+          "reverse": 0,
+          "total": 30
+        }
+      },
+      "summary": {
+        "totalCards": 30,
+        "validPrices": 30,
+        "pendingReview": 0,
+        "zeroPriceCards": 0,
+        "zeroTrendHoloCards": 30,
+        "cardsWithoutPriceData": 0,
+        "discrepancies": 0,
+        "cardsWithoutProductId": 0,
+        "invalidTrendCards": 0,
+        "valuationStates": {
+          "validated": 30
+        },
+        "variantCombinations": {
+          "holo": 30
+        },
+        "validationStates": {
+          "valid": 30
+        },
+        "variantStates": {
+          "valid": 30
+        },
+        "note": "La valoración utiliza el campo esperado y una correspondencia validada. Los ceros de métricas secundarias como trend-holo no invalidan trend."
+      }
+    }
+  ]
+}

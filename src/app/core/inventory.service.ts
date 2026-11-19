@@ -5,6 +5,7 @@ import {
 import { POKEMON_30TH, SETS, VARIANT_IDS, variantId } from '../catalog';
 import { AuthService } from './auth.service';
 import { db } from './firebase';
+import { normalizeQuantity } from './quantity';
 
 const LEGACY_KEY = 'pokemon30-collection';   // datos de la versión anterior (localStorage)
 const LEGACY_DONE = 'pokemon30-legacy-imported';
@@ -68,9 +69,12 @@ export class InventoryService {
   }
 
   private watchItems(uid: string, cid: string) {
-    this.unsubItems = onSnapshot(collection(db, `${this.colPath(uid, cid)}/items`), s => {
+    this.unsubItems = onSnapshot(collection(db, `${this.colPath(uid, cid)}/items`), { includeMetadataChanges: true }, s => {
       const m: Record<string, number> = {};
-      s.forEach(d => (m[d.id] = d.data()['qty']));
+      s.forEach(d => {
+        const q = normalizeQuantity(d.data()['qty']);
+        if (q > 0) m[d.id] = q;
+      });
       this.qty.set(m);
       this.status.set(s.metadata.hasPendingWrites ? 'Guardando…' : '☁ Sincronizado');
     }, e => this.fail(e));
@@ -113,7 +117,7 @@ export class InventoryService {
   async setQty(setId: string, vid: string, q: number) {
     const u = this.auth.user(), id = this.cid();
     if (!u || !id) return;
-    q = Math.max(0, Math.min(999, Math.floor(q)));
+    q = normalizeQuantity(q);
     const ref = doc(db, `${this.colPath(u.uid, id)}/items/${vid}`);
     try { await (q === 0 ? deleteDoc(ref) : setDoc(ref, { setId, qty: q })); }
     catch (e: any) { this.status.set('Error al guardar: ' + (e.code || e.message)); }

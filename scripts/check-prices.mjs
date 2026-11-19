@@ -1,24 +1,38 @@
+import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
+import { CATALOG_CLASSIC_ORDER, PRICE_MAPPINGS, VALIDATED_PRODUCTS } from './price-mappings.mjs';
+import { analyzeCard, normalizeStoredPrice, summarizeSet } from './price-analysis.mjs';
 
 const API_BASE = 'https://api.tcgdex.net/v2/es';
 const CONCURRENCY = 8;
-
+const REQUEST_DELAY_MS = 50;
 const SET_IDS = process.argv.slice(2);
+const RESULT_PATH = 'scripts/price-check-result.json';
+const SUMMARY_PATH = 'scripts/price-check-summary.json';
+const CATALOG_PATH = 'src/app/catalog/cardmarket-prices.ts';
+
+async function writeAtomically(path, contents) {
+  const temporaryPath = `${path}.tmp-${process.pid}`;
+  try {
+    await writeFile(temporaryPath, contents, { flag: 'wx' });
+    await rename(temporaryPath, path);
+  } catch (error) {
+    await rm(temporaryPath, { force: true });
+    throw error;
+  }
+}
 
 if (SET_IDS.length === 0) {
   console.error('Indica al menos un ID de expansión.');
-  console.error('Ejemplo: node scripts/check-prices.mjs me05');
+  console.error('Ejemplos: node scripts/check-prices.mjs 30th');
+  console.error('          node scripts/check-prices.mjs 30th 30th-c');
   process.exit(1);
 }
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function fetchJson(url) {
   const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}: ${url}`);
-  }
-
+  if (!response.ok) throw new Error(`HTTP ${response.status}: ${url}`);
   return response.json();
 }
 
@@ -29,204 +43,236 @@ async function mapWithConcurrency(items, limit, callback) {
   async function worker() {
     while (true) {
       const currentIndex = index++;
-
       if (currentIndex >= items.length) return;
-
       try {
         results[currentIndex] = await callback(items[currentIndex]);
       } catch (error) {
-        results[currentIndex] = {
-          error: error.message
-        };
+        results[currentIndex] = { error: error instanceof Error ? error.message : String(error) };
       }
     }
   }
 
-  await Promise.all(
-    Array.from(
-      { length: Math.min(limit, items.length) },
-      () => worker()
-    )
-  );
-
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
   return results;
 }
 
-function getPriceAnalysis(card) {
-  const variants = card.variants ?? {};
-  const pricing = card.pricing?.cardmarket ?? {};
-
-  // Conservamos los dos precios para poder auditarlos.
-  const trend = pricing.trend ?? null;
-  const trendHolo = pricing['trend-holo'] ?? null;
-
-  // Misma lógica de selección que utilizábamos anteriormente.
-  const holoOnly = Boolean(variants.holo && !variants.normal);
-
-  const expectedField = holoOnly ? 'trend-holo' : 'trend';
-
-  const expectedValue = expectedField === 'trend-holo'
-    ? trendHolo
-    : trend;
-
-  const alternateField = expectedField === 'trend-holo'
-    ? 'trend'
-    : 'trend-holo';
-
-  const alternateValue = expectedField === 'trend-holo'
-    ? trend
-    : trendHolo;
-
-  let selectedField = null;
-  let selectedPrice = null;
-  let status = null;
-
-  if (expectedValue !== null) {
-    selectedField = expectedField;
-    selectedPrice = expectedValue;
-    status = 'ok';
-  } else if (alternateValue !== null) {
-    selectedField = alternateField;
-    selectedPrice = alternateValue;
-    status = 'solo-otro-campo';
-  } else if (pricing.trend !== undefined ||
-             pricing['trend-holo'] !== undefined) {
-    status = 'sin-trend';
-  } else {
-    status = 'sin-bloque';
+function assertCompleteSnapshot(sets) {
+  for (const setId of Object.keys(VALIDATED_PRODUCTS)) {
+    const set = sets.find(entry => entry.set.id === setId);
+    const cardIds = new Set((set?.cards ?? []).map(card => card.cardId));
+    const missing = Object.keys(VALIDATED_PRODUCTS[setId]).filter(cardId => !cardIds.has(cardId));
+    if (missing.length) throw new Error(`Snapshot incompleto: faltan ${missing.length} cartas de ${setId}; no se guardará ningún artefacto.`);
   }
+}
 
+function failedCard(setId, setLanguage, setCard, error) {
   return {
-    variants,
-    expectedField,
-    selectedField,
-    selectedPrice,
-    trend,
-    trendHolo,
-    status,
-    updated: pricing.updated ?? null,
-    unit: pricing.unit ?? null
+    setId,
+    cardId: setCard?.id ?? null,
+    name: setCard?.name ?? null,
+    collectionNumber: setCard?.localId ?? null,
+    rarity: setCard?.rarity ?? null,
+    language: setLanguage ?? null,
+    variants: setCard?.variants ?? null,
+    cardmarket: null,
+    trend: null,
+    trendHolo: null,
+    expectedField: null,
+    selectedField: null,
+    selectedPrice: null,
+    status: 'query-error',
+    reason: error,
+    updatedAt: null,
+    currency: null,
+    unit: null,
+    variantAssessments: [],
   };
 }
 
+function summarizeAll(sets) {
+  const allCards = sets.flatMap(set => set.cards);
+  const summary = summarizeSet(allCards);
+  summary.processed = allCards.length;
+  summary.successfullyValidated = summary.valuationStates?.validated ?? 0;
+  summary.problems = summary.processed - summary.successfullyValidated;
+  summary.queryErrors = allCards.filter(card => card.status === 'query-error').length
+    + sets.filter(set => set.error).length;
+  summary.expansionQueryErrors = sets.filter(set => set.error).length;
+  return summary;
+}
+
 async function analyzeSet(setId) {
-  console.log(`\nAnalizando expansión: ${setId}`);
-
-  const set = await fetchJson(`${API_BASE}/sets/${setId}`);
-
-  console.log(`Nombre: ${set.name}`);
-  console.log(`Cartas declaradas: ${set.cardCount?.total ?? 'N/D'}`);
-
-  const cards = set.cards ?? [];
-
-  const results = await mapWithConcurrency(
-    cards,
-    CONCURRENCY,
-    async (setCard) => {
-      await sleep(50);
-
-      const card = await fetchJson(
-        `${API_BASE}/cards/${setCard.id}`
-      );
-
-      const priceAnalysis = getPriceAnalysis(card);
-
-      return {
-        setId,
-        setName: set.name,
-        id: card.id,
-        name: card.name,
-        localId: card.localId,
-        image: card.image ?? null,
-        ...priceAnalysis
-      };
+  console.log(`\nConsultando expansión ${setId}…`);
+  const set = await fetchJson(`${API_BASE}/sets/${encodeURIComponent(setId)}`);
+  const setCards = set.cards ?? [];
+  const results = await mapWithConcurrency(setCards, CONCURRENCY, async setCard => {
+    await sleep(REQUEST_DELAY_MS);
+    try {
+      const card = await fetchJson(`${API_BASE}/cards/${encodeURIComponent(setCard.id)}`);
+      return analyzeCard(card, setId, set.language, PRICE_MAPPINGS[setId] ?? {}, VALIDATED_PRODUCTS[setId]?.[card.id]);
+    } catch (error) {
+      return failedCard(setId, set.language, setCard, error instanceof Error ? error.message : String(error));
     }
-  );
+  });
 
-  const summary = {
-    total: results.length,
-    ok: 0,
-    soloOtroCampo: 0,
-    sinTrend: 0,
-    sinBloque: 0,
-    errors: 0
-  };
-
-  for (const result of results) {
-    if (result.error) {
-      summary.errors++;
-      continue;
-    }
-
-    switch (result.status) {
-      case 'ok':
-        summary.ok++;
-        break;
-      case 'solo-otro-campo':
-        summary.soloOtroCampo++;
-        break;
-      case 'sin-trend':
-        summary.sinTrend++;
-        break;
-      case 'sin-bloque':
-        summary.sinBloque++;
-        break;
-    }
-  }
-
+  const cards = results.map((result, index) => result?.error
+    ? failedCard(setId, set.language, setCards[index], result.error)
+    : result);
   return {
     set: {
-      id: set.id,
-      name: set.name,
-      cardCount: set.cardCount
+      id: set.id ?? setId,
+      name: set.name ?? null,
+      language: set.language ?? null,
+      cardCount: set.cardCount ?? null,
     },
-    summary,
-    cards: results
+    summary: summarizeSet(cards),
+    cards,
   };
 }
 
 async function main() {
-  const output = {
-    generatedAt: new Date().toISOString(),
-    language: 'es',
-    source: 'TCGdex / Cardmarket',
-    sets: []
-  };
-
+  let previous;
+  try {
+    previous = JSON.parse(await readFile(RESULT_PATH, 'utf8'));
+    if (!Array.isArray(previous?.sets)) throw new Error('El JSON anterior no contiene el listado de expansiones.');
+    if (previous.sets.some(entry => !entry || typeof entry.set?.id !== 'string' || !Array.isArray(entry.cards)))
+      throw new Error('El JSON anterior contiene expansiones incompletas.');
+  } catch (error) {
+    if (error?.code !== 'ENOENT') throw new Error(`No se puede usar el snapshot anterior: ${error.message}`);
+    previous = null;
+  }
+  const allSetIds = Object.keys(VALIDATED_PRODUCTS);
+  const completeRefresh = allSetIds.every(setId => SET_IDS.includes(setId));
+  if (!previous && !completeRefresh) {
+    throw new Error('No existe un snapshot anterior completo. Para evitar borrar precios de otra expansión, consulta todos los IDs validados en la misma ejecución.');
+  }
+  const previousCards = new Map((previous?.sets ?? []).flatMap(set => (set.cards ?? []).map(card => [`${card.setId}:${card.cardId}`, card])));
+  if (previous && !completeRefresh) {
+    for (const setId of allSetIds) {
+      const oldSet = previous.sets.find(set => set.set?.id === setId);
+      const oldIds = new Set((oldSet?.cards ?? []).map(card => card.cardId));
+      if (!oldSet || Object.keys(VALIDATED_PRODUCTS[setId]).some(cardId => !oldIds.has(cardId))) {
+        throw new Error(`El snapshot anterior de ${setId} está incompleto; no se ejecutará una actualización parcial.`);
+      }
+    }
+  }
+  const sets = [];
   for (const setId of SET_IDS) {
     try {
-      const result = await analyzeSet(setId);
-      output.sets.push(result);
-
-      console.log('\nResultado:', result.set.name);
-      console.table(result.summary);
+      sets.push(await analyzeSet(setId));
     } catch (error) {
-      console.error(`Error analizando ${setId}:`, error.message);
-
-      output.sets.push({
-        set: { id: setId },
-        error: error.message,
-        cards: []
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(`Error consultando la expansión ${setId}: ${message}`);
+      sets.push({
+        set: { id: setId, name: null, language: null, cardCount: null },
+        error: message,
+        summary: summarizeSet([]),
+        cards: [],
       });
     }
   }
 
-  const fs = await import('node:fs/promises');
+  for (const set of sets) {
+    set.cards = set.cards.map(card => {
+      const old = previousCards.get(`${card.setId}:${card.cardId}`);
+      const oldProductId = old?.productId ?? old?.cardmarket?.idProduct;
+      const oldValid = Number.isFinite(old?.cardmarket?.trend) && old.cardmarket.trend > 0
+        && oldProductId === VALIDATED_PRODUCTS[card.setId]?.[card.cardId];
+      if (!oldValid || card.valuationStatus === 'validated') return card;
+      return {
+        ...card,
+        cardmarket: old.cardmarket,
+        trend: old.cardmarket.trend,
+        trendHolo: old.cardmarket['trend-holo'] ?? null,
+        expectedField: card.variantAssessments.length === 1 ? 'trend' : null,
+        selectedField: 'trend',
+        selectedPrice: old.cardmarket.trend,
+        status: 'valid',
+        valuationStatus: 'validated',
+        productId: oldProductId,
+        productValidated: true,
+        updatedAt: old.cardmarket.updated,
+        currency: old.cardmarket.unit ?? 'EUR',
+        retainedPreviousPrice: true,
+        refreshIssue: card.reason,
+        reason: 'Se conserva el último precio validado porque la consulta actual no proporcionó un nuevo trend válido.',
+        variantAssessments: card.variantAssessments.map(assessment => ({
+          ...assessment,
+          expectedField: 'trend', selectedField: 'trend', selectedPrice: old.cardmarket.trend,
+          trend: old.cardmarket.trend, status: 'valid',
+          reason: 'Se conserva el último trend de un producto previamente validado.', discrepancy: false,
+        })),
+      };
+    });
+    set.cards = set.cards.map(card => card.cardmarket
+      ? normalizeStoredPrice(card, PRICE_MAPPINGS[card.setId] ?? {}, VALIDATED_PRODUCTS[card.setId]?.[card.cardId])
+      : card);
+    set.summary = summarizeSet(set.cards);
+  }
+  for (const oldSet of previous?.sets ?? []) {
+    const current = sets.find(set => set.set.id === oldSet.set.id);
+    const normalizedOldCards = (oldSet.cards ?? []).map(card => normalizeStoredPrice(
+      card,
+      PRICE_MAPPINGS[card.setId] ?? {},
+      VALIDATED_PRODUCTS[card.setId]?.[card.cardId],
+    ));
+    if (!current) {
+      sets.push({ ...oldSet, cards: normalizedOldCards, summary: summarizeSet(normalizedOldCards) });
+      continue;
+    }
+    if (current.error) current.set = oldSet.set;
+    const currentIds = new Set(current.cards.map(card => card.cardId));
+    const omitted = normalizedOldCards.filter(card => !currentIds.has(card.cardId));
+    if (omitted.length) current.cards.push(...omitted);
+    current.summary = summarizeSet(current.cards);
+  }
+  assertCompleteSnapshot(sets);
+  const audit = summarizeAll(sets);
+  const output = {
+    generatedAt: new Date().toISOString(),
+    language: 'es',
+    source: 'TCGdex / Cardmarket',
+    validationPolicy: 'La valoración usa trend si es finito y positivo, el idProduct coincide con la lista validada y existe una correspondencia de variante explícita. No se sustituyen automáticamente otros campos.',
+    sets,
+    audit,
+  };
 
-  await fs.mkdir('scripts', { recursive: true });
+  await mkdir('scripts', { recursive: true });
+  const resultText = JSON.stringify(output, null, 2);
+  const summaryText = JSON.stringify({ generatedAt: output.generatedAt, audit, sets: sets.map(({ set, summary }) => ({ set, summary })) }, null, 2);
+  const catalogPrices = {};
+  for (const set of sets) for (const card of set.cards) {
+    const collectionNumber = Number(card.collectionNumber);
+    let catalogCardId = null;
+    if (card.setId === '30th') {
+      catalogCardId = card.cardId.endsWith('-B') ? 'rgbB' : card.cardId.endsWith('-G') ? 'rgbG' : card.cardId.endsWith('-R') ? 'rgbR'
+        : collectionNumber <= 128 ? `m${collectionNumber}` : collectionNumber <= 158 ? `s${collectionNumber}` : null;
+    } else if (card.setId === '30th-c' && CATALOG_CLASSIC_ORDER.indexOf(collectionNumber) >= 0) {
+      catalogCardId = `c${CATALOG_CLASSIC_ORDER.indexOf(collectionNumber)}`;
+    }
+    if (!catalogCardId) continue;
+    const cm = card.cardmarket;
+    catalogPrices[`pokemon-30th:${catalogCardId}:normal`] = {
+      amount: card.valuationStatus === 'validated' ? cm?.trend ?? null : null,
+      currency: cm?.unit ?? 'EUR', source: 'cardmarket', productId: card.productId ?? cm?.idProduct ?? null,
+      sourceField: 'trend', status: card.valuationStatus ?? 'needs-review',
+      metrics: Object.fromEntries(['avg','low','trend','avg1','avg7','avg30','avg-holo','low-holo','trend-holo','avg1-holo','avg7-holo','avg30-holo'].map(field => [field, cm?.[field] ?? null])),
+      updatedAt: cm?.updated ? Date.parse(cm.updated) : null,
+    };
+  }
+  const catalogText = `import { PriceCatalog } from '../core/pricing';\n\n/** Snapshot compartido Cardmarket generado desde los datos auditados. */\nexport const CARDMARKET_PRICES: PriceCatalog = ${JSON.stringify(catalogPrices, null, 2)};\n`;
+  await writeAtomically(RESULT_PATH, resultText);
+  await writeAtomically(SUMMARY_PATH, summaryText);
+  // The application snapshot is committed last; a failed run leaves the live bundle data intact.
+  await writeAtomically(CATALOG_PATH, catalogText);
 
-  const outputPath = 'scripts/price-check-result.json';
-
-  await fs.writeFile(
-    outputPath,
-    JSON.stringify(output, null, 2),
-    'utf8'
-  );
-
-  console.log(`\nArchivo generado: ${outputPath}`);
+  console.log('\nResumen de auditoría');
+  console.log(JSON.stringify(audit, null, 2));
+  console.log(`\nResultados detallados: ${RESULT_PATH}`);
+  console.log(`Resumen de auditoría: ${SUMMARY_PATH}`);
 }
 
 main().catch(error => {
   console.error(error);
-  process.exit(1);
+  process.exitCode = 1;
 });

@@ -1,5 +1,6 @@
 import { CardSet, variantId, variantsOf } from '../catalog';
 import { Price } from './pricing';
+import { normalizeQuantity } from './quantity';
 
 export interface Valuation { totals: Record<string, number>; dups: Record<string, number>; unpriced: number; updatedAt?: number; }
 
@@ -9,10 +10,12 @@ const add = (r: Record<string, number>, k: string, v: number) => { r[k] = (r[k] 
 export function valuate(set: CardSet, qty: Record<string, number>, prices: Record<string, Price>): Valuation {
   const v: Valuation = { totals: {}, dups: {}, unpriced: 0 };
   for (const c of set.cards) for (const x of variantsOf(c)) {
-    const id = variantId(set.id, c.id, x.key), q = qty[id] || 0;
+    const id = variantId(set.id, c.id, x.key), q = normalizeQuantity(qty[id]);
     if (!q) continue;
     const p = prices[id];
-    if (!p) { v.unpriced++; continue; }
+    if (!p || p.status !== 'validated' || p.source !== 'cardmarket' || p.sourceField !== 'trend'
+      || typeof p.productId !== 'number' || !Number.isInteger(p.productId) || p.productId <= 0
+      || typeof p.amount !== 'number' || !Number.isFinite(p.amount) || p.amount <= 0) { v.unpriced++; continue; }
     add(v.totals, p.currency, p.amount * q);
     if (q > 1) add(v.dups, p.currency, p.amount * (q - 1));   // valor de las copias sobrantes
     if (p.updatedAt && (!v.updatedAt || p.updatedAt > v.updatedAt)) v.updatedAt = p.updatedAt;

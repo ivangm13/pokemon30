@@ -7,6 +7,7 @@ import { setStats } from '../core/stats';
 import { PlanService } from '../core/plan.service';
 import { PriceService } from '../core/price.service';
 import { combine, fmtDate, fmtMoney, valuate } from '../core/valuation';
+import { ValuablePrice } from '../core/pricing';
 
 interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boolean; }
 
@@ -66,7 +67,7 @@ interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boo
               @if (vals().length > 1) {
                 <div class="nums">@for (x of vals(); track x.name) { <span>{{ x.name }}: {{ money(x.totals) }}</span> }</div>
               }
-              <small>Estimación con los precios que has introducido; no es un valor de venta.</small>
+              <small>Valoración de referencia compartida de Cardmarket; la fecha refleja la última actualización incluida.</small>
             </div>
           } @else {
             <div class="stat lock">💎 <b>Valoración económica</b> <small>Función Pro</small></div>
@@ -100,7 +101,13 @@ interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boo
             <strong>{{ e.card.name }}</strong>
             <em>{{ e.multi ? e.v.label : (e.card.note || e.card.rarity) }}</em>
             @if (plan.can('valuation')) {
-              <button class="alt price" (click)="editPrice(e); $event.stopPropagation()">{{ priceLabel(e) }}</button>
+              <div class="price" (click)="$event.stopPropagation()">
+                @if (priceFor(e); as p) {
+                  <span>Unitario: {{ priceMoney(p) }}</span>
+                  @if (n(e) > 0) { <strong>Total (×{{ n(e) }}): {{ totalPrice(e, p) }}</strong> }
+                  <small>Cardmarket · {{ date(p.updatedAt) }} · {{ p.sourceField }}</small>
+                } @else { <span>Sin valoración</span> }
+              </div>
             }
             @if (n(e) > 0) {
               <div class="step" (click)="$event.stopPropagation()">
@@ -164,7 +171,7 @@ interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boo
     .plan.on { background:#35e0c2; color:#111; border-color:#35e0c2 }
     .val { grid-column:1/-1 } .val small { display:block; opacity:.7; margin-top:.3rem }
     .lock { opacity:.6; display:flex; gap:.5rem; align-items:center }
-    .price { margin-top:.3rem; font-size:.75rem; padding:.2rem .5rem }
+    .price { display:flex; flex-direction:column; gap:.15rem; min-width:0; margin-top:.3rem; font-size:.75rem; padding:.2rem .3rem; cursor:default; overflow-wrap:anywhere }
     footer { padding-bottom:calc(1rem + env(safe-area-inset-bottom)) }
   `],
 })
@@ -234,22 +241,14 @@ export class CollectionPage {
   }
   async importLegacy() { alert(`${await this.inv.importLegacyLocal()} cartas importadas`); this.legacy.set(false); }
 
-  priceLabel(e: Entry) {
+  priceFor(e: Entry): ValuablePrice | null {
     const p = this.priceSvc.prices()[e.vid];
-    return p ? fmtMoney({ [p.currency]: p.amount }) : '＋ precio';
+    return p?.status === 'validated' && p.source === 'cardmarket' && p.sourceField === 'trend'
+      && typeof p.amount === 'number' && Number.isFinite(p.amount) && p.amount > 0
+      && typeof p.productId === 'number' && Number.isInteger(p.productId) && p.productId > 0 ? p as ValuablePrice : null;
   }
-  async editPrice(e: Entry) {
-    const cur = this.priceSvc.prices()[e.vid];
-    const v = prompt(`Precio de ${e.card.name} (${e.card.num}) en €. Vacío = borrar el precio.`, cur ? String(cur.amount).replace('.', ',') : '');
-    if (v === null) return;
-    try {
-      const t = v.trim().replace(',', '.');
-      if (!t) return await this.priceSvc.save(e.vid, null);
-      const amount = Number(t);
-      if (!isFinite(amount) || amount < 0 || amount > 99999) return alert('Precio no válido');
-      await this.priceSvc.save(e.vid, { amount: Math.round(amount * 100) / 100, currency: 'EUR', language: this.set()?.language, source: 'manual' });
-    } catch { alert('No se pudo guardar el precio (¿tienes el plan Pro?).'); }
-  }
+  priceMoney(price: ValuablePrice) { return fmtMoney({ [price.currency]: price.amount }); }
+  totalPrice(entry: Entry, price: ValuablePrice) { return fmtMoney({ [price.currency]: price.amount * this.n(entry) }); }
 
   async newCollection() {
     if (!this.plan.can('multiCollection')) return alert('Tener varias colecciones es una función del plan Pro.');
