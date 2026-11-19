@@ -1,0 +1,79 @@
+{
+  "configVersion": 1,
+  "timestamp": 1795096489766,
+  "index": "/pokemon30/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/pokemon30/favicon.svg",
+        "/pokemon30/index.html",
+        "/pokemon30/main-ML64URFV.js",
+        "/pokemon30/styles-FSWZ6CGO.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/pokemon30/icons/apple-touch-icon.png",
+        "/pokemon30/icons/icon-128x128.png",
+        "/pokemon30/icons/icon-144x144.png",
+        "/pokemon30/icons/icon-152x152.png",
+        "/pokemon30/icons/icon-192x192.png",
+        "/pokemon30/icons/icon-384x384.png",
+        "/pokemon30/icons/icon-512x512.png",
+        "/pokemon30/icons/icon-72x72.png",
+        "/pokemon30/icons/icon-96x96.png",
+        "/pokemon30/manifest.webmanifest"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/pokemon30/favicon.svg": "f729737bc1e27dcab633b1e7054127f4d8fe26a2",
+    "/pokemon30/icons/apple-touch-icon.png": "40c8a9aa080d21574be206486c7896db08225163",
+    "/pokemon30/icons/icon-128x128.png": "c23354873f36a380ace10a356db08ae400acfcb2",
+    "/pokemon30/icons/icon-144x144.png": "4c3a2e70e6dcd843a2cc7796f9ae1c6c67f8aaf9",
+    "/pokemon30/icons/icon-152x152.png": "4b426565cad3fc2f6c8dc15e9218e78dbe48f16f",
+    "/pokemon30/icons/icon-192x192.png": "3e6e403df1d3181c671baa2d04f9cd79a1e75901",
+    "/pokemon30/icons/icon-384x384.png": "759cff02d5b34be14f336c664bacf003d20127de",
+    "/pokemon30/icons/icon-512x512.png": "f7636c663da792b8e817aea91fe3e3bd6da0c962",
+    "/pokemon30/icons/icon-72x72.png": "6ae4d2fb944650b05fa41b26e68a8bda3f8fa17c",
+    "/pokemon30/icons/icon-96x96.png": "34db7d556332644f27522dbda447cb9990fff82d",
+    "/pokemon30/index.html": "52e658129ad0cd1080771cfc11df4285c61b4755",
+    "/pokemon30/main-ML64URFV.js": "61f500ae3291e4c6c7a12918d16c04074436544b",
+    "/pokemon30/manifest.webmanifest": "f02d50351ec74b1503fe71255e786113ac67ad1a",
+    "/pokemon30/styles-FSWZ6CGO.css": "034b6539dc125766449911072ab67c01f2e5b2b5"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
