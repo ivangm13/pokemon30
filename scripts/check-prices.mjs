@@ -1,6 +1,7 @@
 import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
 import { CATALOG_CLASSIC_ORDER, PRICE_MAPPINGS, VALIDATED_PRODUCTS } from './price-mappings.mjs';
-import { analyzeCard, normalizeStoredPrice, summarizeSet } from './price-analysis.mjs';
+import { analyzeCard, isValidPrice, normalizeStoredPrice, summarizeSet } from './price-analysis.mjs';
 
 const API_BASE = 'https://api.tcgdex.net/v2/es';
 const CONCURRENCY = 8;
@@ -11,6 +12,7 @@ const SUMMARY_PATH = 'scripts/price-check-summary.json';
 const CATALOG_PATH = 'src/app/catalog/cardmarket-prices.ts';
 
 async function writeAtomically(path, contents) {
+  await mkdir(dirname(path), { recursive: true });
   const temporaryPath = `${path}.tmp-${process.pid}`;
   try {
     await writeFile(temporaryPath, contents, { flag: 'wx' });
@@ -56,12 +58,26 @@ async function mapWithConcurrency(items, limit, callback) {
   return results;
 }
 
-function assertCompleteSnapshot(sets) {
+function assertCompleteSnapshot(sets, requestedSetIds) {
   for (const setId of Object.keys(VALIDATED_PRODUCTS)) {
     const set = sets.find(entry => entry.set.id === setId);
     const cardIds = new Set((set?.cards ?? []).map(card => card.cardId));
     const missing = Object.keys(VALIDATED_PRODUCTS[setId]).filter(cardId => !cardIds.has(cardId));
     if (missing.length) throw new Error(`Snapshot incompleto: faltan ${missing.length} cartas de ${setId}; no se guardará ningún artefacto.`);
+  }
+  for (const setId of requestedSetIds) {
+    const set = sets.find(entry => entry.set.id === setId);
+    if (!set) throw new Error(`No se guardará el snapshot: no existe resultado para ${setId}.`);
+    // A failed refresh is safe only after the old, complete set was restored below.
+    if (set.error && set.cards.length === 0)
+      throw new Error(`No se guardará el snapshot: ${setId} falló y no hay datos anteriores que conservar.`);
+    const expected = set.set.cardCount?.total;
+    if (Number.isInteger(expected) && set.cards.length !== expected)
+      throw new Error(`Snapshot incompleto de ${setId}: esperadas ${expected} cartas y recibidas ${set.cards.length}.`);
+    if (set.cards.some(card => card.status === 'query-error' || !card.cardId || !card.collectionNumber || !card.name))
+      throw new Error(`Snapshot incompleto de ${setId}: hay cartas con errores o campos clave ausentes.`);
+    if (new Set(set.cards.map(card => card.cardId)).size !== set.cards.length)
+      throw new Error(`Snapshot incompleto de ${setId}: hay IDs de carta duplicados.`);
   }
 }
 
@@ -226,7 +242,7 @@ async function main() {
     if (omitted.length) current.cards.push(...omitted);
     current.summary = summarizeSet(current.cards);
   }
-  assertCompleteSnapshot(sets);
+  assertCompleteSnapshot(sets, SET_IDS);
   const audit = summarizeAll(sets);
   const output = {
     generatedAt: new Date().toISOString(),
@@ -241,6 +257,7 @@ async function main() {
   const resultText = JSON.stringify(output, null, 2);
   const summaryText = JSON.stringify({ generatedAt: output.generatedAt, audit, sets: sets.map(({ set, summary }) => ({ set, summary })) }, null, 2);
   const catalogPrices = {};
+  const perSetPrices = {};
   for (const set of sets) for (const card of set.cards) {
     const collectionNumber = Number(card.collectionNumber);
     let catalogCardId = null;
@@ -250,21 +267,46 @@ async function main() {
     } else if (card.setId === '30th-c' && CATALOG_CLASSIC_ORDER.indexOf(collectionNumber) >= 0) {
       catalogCardId = `c${CATALOG_CLASSIC_ORDER.indexOf(collectionNumber)}`;
     }
-    if (!catalogCardId) continue;
-    const cm = card.cardmarket;
-    catalogPrices[`pokemon-30th:${catalogCardId}:normal`] = {
-      amount: card.valuationStatus === 'validated' ? cm?.trend ?? null : null,
-      currency: cm?.unit ?? 'EUR', source: 'cardmarket', productId: card.productId ?? cm?.idProduct ?? null,
-      sourceField: 'trend', status: card.valuationStatus ?? 'needs-review',
-      metrics: Object.fromEntries(['avg','low','trend','avg1','avg7','avg30','avg-holo','low-holo','trend-holo','avg1-holo','avg7-holo','avg30-holo'].map(field => [field, cm?.[field] ?? null])),
-      updatedAt: cm?.updated ? Date.parse(cm.updated) : null,
-    };
+    const assessments = card.variantAssessments?.filter(assessment => assessment.variant) ?? [];
+    for (const assessment of assessments) {
+      const appSetId = card.setId === '30th' || card.setId === '30th-c' ? 'pokemon-30th' : card.setId;
+      let appCardId = catalogCardId;
+      let appVariant = assessment.variant;
+      if (card.setId === '30th' || card.setId === '30th-c') {
+        if (!catalogCardId) continue;
+        appVariant = 'normal'; // the existing 30th catalog uses one inventory variant per card
+      } else {
+        appCardId = card.cardId;
+      }
+      const key = `${appSetId}:${appCardId}:${appVariant}`;
+      const cm = assessment.variantPrice ?? card.cardmarket;
+      const sourceField = assessment.selectedField ?? assessment.expectedField ?? 'trend';
+      const status = card.valuationStatus ?? 'needs-review';
+      const amount = status === 'validated' && sourceField === 'trend' && isValidPrice(assessment.selectedPrice)
+        ? assessment.selectedPrice : null;
+      const price = {
+        amount,
+        currency: cm?.unit ?? card.currency ?? 'EUR',
+        source: 'cardmarket',
+        productId: Number.isInteger(card.productId ?? cm?.idProduct) ? card.productId ?? cm.idProduct : null,
+        sourceField,
+        status,
+        metrics: Object.fromEntries(['avg','low','trend','avg1','avg7','avg30','avg-holo','low-holo','trend-holo','avg1-holo','avg7-holo','avg30-holo'].map(field => [field, cm?.[field] ?? null])),
+        updatedAt: cm?.updated ? Date.parse(cm.updated) : null,
+      };
+      (perSetPrices[appSetId] ??= {})[key] = price;
+      if (appSetId === 'pokemon-30th') catalogPrices[key] = price;
+    }
   }
   const catalogText = `import { PriceCatalog } from '../core/pricing';\n\n/** Snapshot compartido Cardmarket generado desde los datos auditados. */\nexport const CARDMARKET_PRICES: PriceCatalog = ${JSON.stringify(catalogPrices, null, 2)};\n`;
   await writeAtomically(RESULT_PATH, resultText);
   await writeAtomically(SUMMARY_PATH, summaryText);
   // The application snapshot is committed last; a failed run leaves the live bundle data intact.
   await writeAtomically(CATALOG_PATH, catalogText);
+  for (const [appSetId, prices] of Object.entries(perSetPrices)) {
+    const file = encodeURIComponent(appSetId).replaceAll('%', '_');
+    await writeAtomically(`public/catalog/prices/${file}.json`, JSON.stringify(prices, null, 2));
+  }
 
   console.log('\nResumen de auditoría');
   console.log(JSON.stringify(audit, null, 2));

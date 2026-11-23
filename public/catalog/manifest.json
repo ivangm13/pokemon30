@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "games": [
+    {
+      "id": "pokemon",
+      "name": "Pokémon TCG"
+    }
+  ],
+  "sets": [
+    {
+      "id": "pokemon-30th",
+      "gameId": "pokemon",
+      "name": "30th Celebration",
+      "language": "EN",
+      "groups": [
+        {
+          "key": "main",
+          "label": "Principal"
+        },
+        {
+          "key": "pikachu",
+          "label": "Pikachu"
+        },
+        {
+          "key": "secret",
+          "label": "Secretas"
+        },
+        {
+          "key": "rgb",
+          "label": "Mew RGB"
+        },
+        {
+          "key": "classic",
+          "label": "Classic"
+        },
+        {
+          "key": "energy",
+          "label": "Energías"
+        }
+      ],
+      "modes": [
+        {
+          "key": "base",
+          "label": "Base Set",
+          "rule": {
+            "tags": [
+              "main",
+              "pikachu"
+            ]
+          }
+        },
+        {
+          "key": "master",
+          "label": "Master Set",
+          "rule": {
+            "all": true
+          }
+        }
+      ],
+      "series": {
+        "id": "me",
+        "name": "Megaevolución"
+      },
+      "releaseDate": "2026-09-16",
+      "cardCount": {
+        "official": 128,
+        "total": 199
+      },
+      "assetPath": "catalog/sets/pokemon-30th.json",
+      "pricePath": "catalog/prices/pokemon-30th.json",
+      "availability": "available"
+    },
+    {
+      "id": "me06",
+      "gameId": "pokemon",
+      "name": "Dominio Delta",
+      "language": "es",
+      "series": {
+        "id": "me",
+        "name": "Megaevolución"
+      },
+      "releaseDate": "2026-11-06",
+      "cardCount": {
+        "firstEd": 0,
+        "holo": 0,
+        "normal": 0,
+        "official": 103,
+        "reverse": 0,
+        "total": 141
+      },
+      "source": {
+        "provider": "tcgdex",
+        "setId": "me06",
+        "language": "es"
+      },
+      "availability": "available",
+      "groups": [
+        {
+          "key": "base",
+          "label": "Base 001–103"
+        },
+        {
+          "key": "secret",
+          "label": "Secretas"
+        }
+      ],
+      "modes": [
+        {
+          "key": "base",
+          "label": "Base Set",
+          "rule": {
+            "tags": [
+              "base"
+            ]
+          }
+        },
+        {
+          "key": "master",
+          "label": "Master Set",
+          "rule": {
+            "all": true
+          }
+        }
+      ],
+      "assetPath": "catalog/sets/me06.json",
+      "pricePath": "catalog/prices/me06.json"
+    }
+  ]
+}

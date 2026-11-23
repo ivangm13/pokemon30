@@ -1,17 +1,29 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, inject, isDevMode, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { provideRouter, withHashLocation } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { FirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideFirestore } from '@angular/fire/firestore';
+import { initializeFirestore, persistentLocalCache, persistentMultipleTabManager } from 'firebase/firestore';
+import { provideServiceWorker } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { routes } from './app.routes';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    // Inicializa la app principal con tus credenciales
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    // Habilita el servicio de Autenticación
-    provideAuth(() => getAuth()),
-    // Habilita la base de datos Firestore
-    provideFirestore(() => getFirestore())
+    provideAuth(() => getAuth(inject(FirebaseApp))),
+    provideFirestore(() => initializeFirestore(inject(FirebaseApp), {
+      localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
+    })),
+    provideRouter(routes, withHashLocation()),
+    provideHttpClient(),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ]
 };
 

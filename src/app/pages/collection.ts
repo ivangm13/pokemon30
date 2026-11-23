@@ -1,12 +1,14 @@
-import { Component, computed, inject, signal } from '@angular/core';
-import { Router } from '@angular/router';
-import { Card, CardSet, Variant, setById, variantId, variantsOf } from '../catalog';
-import { AuthService } from '../core/auth.service';
+import { Component, computed, effect, inject, signal, untracked } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Card, CardSet, Variant, variantId, variantsOf } from '../catalog';
+import { CatalogService } from '../core/catalog.service';
 import { InventoryService } from '../core/inventory.service';
 import { setStats } from '../core/stats';
 import { PlanService } from '../core/plan.service';
 import { PriceService } from '../core/price.service';
-import { combine, fmtDate, fmtMoney, valuate } from '../core/valuation';
+import { fmtDate, fmtMoney, valuate } from '../core/valuation';
 import { ValuablePrice } from '../core/pricing';
 
 interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boolean; }
@@ -15,64 +17,88 @@ interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boo
   selector: 'app-collection',
   standalone: true,
   template: `
-    @if (set(); as s) {
+    @if (showCollectionPicker()) {
+      <section class="collection-picker" aria-labelledby="collection-picker-title">
+        <p class="eyebrow">TUS INVENTARIOS</p>
+        <h1 id="collection-picker-title">Elige una colección</h1>
+        <p>Selecciona qué colección quieres consultar.</p>
+        <ul>
+          @for (collection of inv.collections(); track collection.id) {
+            <li><button type="button" (click)="openCollection(collection.id)">
+              <strong>{{ collection.name }}</strong><span>{{ collection.setIds.length }} expansiones</span>
+            </button></li>
+          }
+        </ul>
+      </section>
+    } @else if (set(); as s) {
       <div class="head">
         <div class="top">
-          <h1>{{ inv.collection()?.name }} · <b>{{ s.name }}</b></h1>
-          <div class="user">
-            <small>{{ inv.status() }}</small>
-            <button class="alt plan" [class.on]="plan.plan() === 'pro'" title="Actualizar plan" (click)="plan.refresh()">{{ plan.plan() === 'pro' ? 'PRO' : 'Gratis' }}</button>
-            <button class="alt" (click)="logout()">{{ auth.user()?.email }} · Salir</button>
+          <h1>{{ inv.collection()?.name }} · {{ s.name }}</h1>
+        </div>
+        @if (!inv.collection()?.setIds.includes(s.id)) {
+          <div class="banner">Esta expansión todavía no forma parte de este inventario.
+            <button type="button" (click)="addExpansion(s.id)">Añadir a mi colección</button>
           </div>
-        </div>
-        <div class="cols">
-          @if (inv.collections().length > 1) {
-            <select (change)="inv.select($any($event.target).value)">
-              @for (c of inv.collections(); track c.id) {
-                <option [value]="c.id" [selected]="c.id === inv.collection()?.id">{{ c.name }}</option>
-              }
-            </select>
-          }
-          <button class="alt" (click)="newCollection()">＋ Colección{{ plan.can('multiCollection') ? '' : ' 🔒' }}</button>
-          <button class="alt" (click)="renameCollection()">✎ Renombrar</button>
-          @if (inv.collection()?.id !== 'main') { <button class="alt" (click)="removeCollection()">🗑 Borrar</button> }
-        </div>
-        @if (sets().length > 1) {
-          <nav>@for (x of sets(); track x.id) { <button [class.on]="x.id === s.id" (click)="setId.set(x.id)">{{ x.name }}</button> }</nav>
         }
-        @if (legacy()) {
-          <div class="banner">Hemos encontrado datos de la versión anterior en este navegador.
-            <button (click)="importLegacy()">Importarlos</button></div>
-        }
-        <div class="panel">
-          @for (m of stats(); track m.key) {
-            <div class="stat">
-              <div class="stat-h"><b>{{ m.label }}</b><span class="pct">{{ m.pct }}%</span></div>
-              <div class="bar"><i [style.width.%]="m.pct"></i></div>
-              <div class="nums">
-                <span>✓ {{ m.owned }}/{{ m.total }}</span>
-                <span>Pendientes {{ m.missing }}</span>
-                <span>⧉ Repetidas {{ m.dups }}</span>
-              </div>
-            </div>
-          }
-          @if (plan.can('valuation')) {
-            <div class="stat val">
-              <div class="stat-h"><b>Valor estimado</b><span class="pct">{{ money(grand().totals) }}</span></div>
-              <div class="nums">
-                <span>⧉ Repetidas: {{ money(grand().dups) }}</span>
-                <span>Sin precio: {{ grand().unpriced }}</span>
-                <span>Precios: {{ date(grand().updatedAt) }}</span>
-              </div>
-              @if (vals().length > 1) {
-                <div class="nums">@for (x of vals(); track x.name) { <span>{{ x.name }}: {{ money(x.totals) }}</span> }</div>
-              }
-              <small>Valoración de referencia compartida de Cardmarket; la fecha refleja la última actualización incluida.</small>
-            </div>
+        @if (!routeSetId() && sets().length > 1) {
+          @if (sets().length <= 3) {
+            <nav class="set-switcher" aria-label="Expansiones de esta colección">
+              @for (x of sets(); track x.id) { <button [class.on]="x.id === s.id" (click)="setId.set(x.id)">{{ x.name }}</button> }
+            </nav>
           } @else {
-            <div class="stat lock">💎 <b>Valoración económica</b> <small>Función Pro</small></div>
+            <label class="set-picker">Expansión mostrada
+              <select [value]="s.id" (change)="setId.set($any($event.target).value)">
+                @for (x of sets(); track x.id) { <option [value]="x.id">{{ x.name }}</option> }
+              </select>
+            </label>
           }
-        </div>
+        }
+        <details class="overview">
+          <summary>Progreso y valoración de {{ s.name }}</summary>
+          <div class="overview-status"><small>{{ inv.status() }}</small></div>
+          <div class="overview-actions">
+            @if (inv.collections().length > 1) {
+              <label>Colección
+                <select [value]="inv.collection()?.id" (change)="openCollection($any($event.target).value)">
+                  @for (c of inv.collections(); track c.id) { <option [value]="c.id">{{ c.name }}</option> }
+                </select>
+              </label>
+            }
+            @if (inv.collection()?.id !== 'main') { <button class="alt" (click)="removeCollection()">🗑 Borrar colección</button> }
+          </div>
+          @if (legacy()) {
+            <div class="banner">Hemos encontrado datos de la versión anterior en este navegador.
+              <button (click)="importLegacy()">Importarlos</button></div>
+          }
+          <div class="panel">
+            @for (m of stats(); track m.key) {
+              <div class="stat">
+                <div class="stat-h"><b>{{ m.label }}</b><span class="pct">{{ m.pct }}%</span></div>
+                <div class="bar"><i [style.width.%]="m.pct"></i></div>
+                <div class="nums">
+                  <span>✓ {{ m.owned }}/{{ m.total }}</span>
+                  <span>Pendientes {{ m.missing }}</span>
+                  <span>⧉ Repetidas {{ m.dups }}</span>
+                </div>
+              </div>
+            }
+            @if (plan.can('valuation')) {
+              @for (valuation of vals(); track valuation.id) {
+                <div class="stat val">
+                  <div class="stat-h"><b>{{ valuation.name }} · Valor estimado</b><span class="pct">{{ valuationMoney(valuation.totals) }}</span></div>
+                  <div class="nums">
+                    <span>⧉ Repetidas: {{ money(valuation.dups) }}</span>
+                    <span>Sin precio: {{ valuation.unpriced }}</span>
+                    <span>Precios: {{ date(valuation.updatedAt) }}</span>
+                  </div>
+                  <small>Valoración de referencia compartida de Cardmarket.</small>
+                </div>
+              }
+            } @else {
+              <div class="stat lock">💎 <b>Valoración económica</b> <small>Función Pro</small></div>
+            }
+          </div>
+        </details>
       </div>
 
       <header>
@@ -127,6 +153,15 @@ interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boo
   styles: [`
     :host { display:block; min-height:100vh; color:#eef; font-family:system-ui,sans-serif;
       background:radial-gradient(circle at top,#2a2f6b,#0d0f26 60%); padding-bottom:3rem; }
+    .collection-picker { width:min(680px, calc(100% - 2rem)); margin:clamp(2rem,8vh,5rem) auto; padding:1.25rem; border:1px solid #ffffff24; border-radius:16px; background:#ffffff0d; }
+    .collection-picker .eyebrow { color:#ffdc52; font-size:.75rem; font-weight:800; letter-spacing:.12em; }
+    .collection-picker h1 { margin:.2rem 0 .5rem; }
+    .collection-picker p { color:#c2c6df; }
+    .collection-picker ul { display:grid; gap:.65rem; margin:1rem 0 0; padding:0; list-style:none; }
+    .collection-picker button { display:flex; width:100%; justify-content:space-between; gap:1rem; padding:1rem; border:1px solid #ffffff30; border-radius:12px; background:#ffffff0d; color:#fff; text-align:left; cursor:pointer; }
+    .collection-picker button:hover { border-color:#ffcb05; background:#ffcb0512; }
+    .collection-picker button span { color:#c2c6df; }
+    button:focus-visible { outline:3px solid #ffdc52; outline-offset:3px; }
     header { position:sticky; top:env(safe-area-inset-top,0px); z-index:5; padding:.8rem 1rem; background:#0d0f26e6; backdrop-filter:blur(8px); border-bottom:1px solid #ffffff22; }
     h1 { margin:0 0 .4rem; font-size:1.2rem; font-weight:500 } h1 b { color:#ffcb05 }
     .stats { display:flex; gap:1rem; flex-wrap:wrap; font-size:.9rem; margin-bottom:.4rem }
@@ -155,7 +190,15 @@ interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boo
   
     .head { padding:calc(.8rem + env(safe-area-inset-top,0px)) 1rem 0; max-width:1200px; margin:auto }
     .top { display:flex; justify-content:space-between; align-items:center; gap:.5rem; flex-wrap:wrap; margin-bottom:.5rem }
-    .user { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap }
+    .overview { margin:.55rem 0 .8rem; border:1px solid #ffffff24; border-radius:12px; background:#ffffff08; }
+    .overview > summary { padding:.75rem .9rem; color:#ffdc52; cursor:pointer; font-weight:650; }
+    .overview > summary:focus-visible { outline:3px solid #ffdc52; outline-offset:3px; border-radius:10px; }
+    .overview-actions { display:flex; align-items:end; flex-wrap:wrap; gap:.65rem; padding:0 .8rem .7rem; }
+    .overview-status { padding:0 .8rem .65rem; color:#c2c6df; }
+    .overview-actions label,.set-picker { display:grid; gap:.35rem; color:#d5d8ed; font-size:.82rem; }
+    .overview select,.set-picker select { min-height:38px; padding:.4rem .65rem; border:1px solid #ffffff35; border-radius:9px; background:#171a39; color:#fff; font:inherit; }
+    .set-switcher { margin:.55rem 0; }
+    .set-picker { width:min(100%,360px); margin:.6rem 0; }
     .panel { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:.6rem; margin-bottom:.8rem }
     .stat { padding:.7rem .9rem; border-radius:12px; background:#ffffff12; border:1px solid #ffffff22 }
     .stat-h { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:.3rem }
@@ -176,17 +219,26 @@ interface Entry { vid: string; setId: string; card: Card; v: Variant; multi: boo
   `],
 })
 export class CollectionPage {
-  auth = inject(AuthService);
   inv = inject(InventoryService);
-  private router = inject(Router);
   plan = inject(PlanService);
   private priceSvc = inject(PriceService);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
+  private readonly catalog = inject(CatalogService);
+  private readonly routeCollectionId = toSignal(this.route.queryParamMap.pipe(map(params => params.get('id'))), { initialValue: null });
+  readonly routeSetId = toSignal(this.route.paramMap.pipe(map(params => params.get('setId'))), { initialValue: this.route.snapshot.paramMap.get('setId') });
+  readonly showCollectionPicker = computed(() => !this.routeSetId() && this.inv.collections().length > 1 && !this.routeCollectionId());
   money = fmtMoney;
   date = fmtDate;
 
-  readonly sets = computed(() => (this.inv.collection()?.setIds ?? []).map(setById).filter((x): x is CardSet => !!x));
+  readonly sets = computed(() => (this.inv.collection()?.setIds ?? [])
+    .map(id => this.catalog.loadedSets()[id]).filter((set): set is CardSet => !!set));
   readonly setId = signal('');
-  readonly set = computed(() => this.sets().find(x => x.id === this.setId()) ?? this.sets()[0]);
+  readonly set = computed(() => {
+    const routeId = this.routeSetId();
+    if (routeId) return this.catalog.loadedSets()[routeId];
+    return this.sets().find(set => set.id === this.setId()) ?? this.sets()[0];
+  });
   readonly q = signal('');
   readonly g = signal('all');
   readonly st = signal<'all' | 'have' | 'missing' | 'dup'>('all');
@@ -196,6 +248,32 @@ export class CollectionPage {
     { k: 'missing' as const, l: 'Me faltan' }, { k: 'dup' as const, l: 'Repetidas' },
   ];
 
+  constructor() {
+    effect(() => {
+      const requested = this.routeSetId();
+      const ids = [...new Set([...(this.inv.collection()?.setIds ?? []), ...(requested ? [requested] : [])])];
+      if (!ids.length) return;
+      untracked(() => {
+        void Promise.all([this.catalog.loadSets(ids), this.priceSvc.loadSets(ids)]).catch(error => {
+          this.inv.status.set('Error: ' + (error instanceof Error ? error.message : 'No se pudo cargar la expansión.'));
+        });
+      });
+    });
+    effect(() => {
+      const id = this.routeCollectionId();
+      if (id && this.inv.collectionsReady() && this.inv.collections().some(collection => collection.id === id)) {
+        this.inv.select(id);
+      }
+    });
+  }
+
+  async openCollection(id: string) {
+    this.inv.select(id);
+    await this.router.navigate([], { relativeTo: this.route, queryParams: { id }, replaceUrl: true });
+  }
+
+  async addExpansion(id: string) { await this.inv.addSetToCollection(id); }
+
   readonly tabs = computed(() => [{ key: 'all', label: 'Todas' }, ...(this.set()?.groups ?? [])]);
   readonly entries = computed<Entry[]>(() => {
     const s = this.set();
@@ -203,10 +281,9 @@ export class CollectionPage {
       vid: variantId(s.id, card.id, v.key), setId: s.id, card, v, multi: variantsOf(card).length > 1 }))) : [];
   });
   readonly vals = computed(() => {
-    const p = this.priceSvc.prices(), q = this.inv.qty();
-    return this.sets().map(s => ({ name: s.name, ...valuate(s, q, p) }));
+    const set = this.set();
+    return set ? [{ id: set.id, name: set.name, ...valuate(set, this.inv.qty(), this.priceSvc.prices()) }] : [];
   });
-  readonly grand = computed(() => combine(this.vals()));
   readonly stats = computed(() => { const s = this.set(); return s ? setStats(s, this.inv.qty()) : []; });
   readonly list = computed(() => {
     const g = this.g(), st = this.st(), q = this.q().trim().toLowerCase(), m = this.inv.qty();
@@ -226,7 +303,6 @@ export class CollectionPage {
   toggle(e: Entry) { const n = this.n(e); if (n <= 1) this.inv.setQty(e.setId, e.vid, n ? 0 : 1); } // con varias copias, usa − / +
   add(e: Entry, d: number) { this.inv.setQty(e.setId, e.vid, this.n(e) + d); }
 
-  async logout() { await this.auth.logout(); this.router.navigateByUrl('/login'); }
   exportData() {
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([JSON.stringify({ version: 2, items: this.inv.qty() })], { type: 'application/json' }));
@@ -247,18 +323,12 @@ export class CollectionPage {
       && typeof p.amount === 'number' && Number.isFinite(p.amount) && p.amount > 0
       && typeof p.productId === 'number' && Number.isInteger(p.productId) && p.productId > 0 ? p as ValuablePrice : null;
   }
+  valuationMoney(totals: Record<string, number>) {
+    return Object.keys(totals).length ? fmtMoney(totals) : 'Sin valoración';
+  }
   priceMoney(price: ValuablePrice) { return fmtMoney({ [price.currency]: price.amount }); }
   totalPrice(entry: Entry, price: ValuablePrice) { return fmtMoney({ [price.currency]: price.amount * this.n(entry) }); }
 
-  async newCollection() {
-    if (!this.plan.can('multiCollection')) return alert('Tener varias colecciones es una función del plan Pro.');
-    const n = prompt('Nombre de la nueva colección');
-    if (n?.trim()) await this.inv.createCollection(n);
-  }
-  async renameCollection() {
-    const n = prompt('Nuevo nombre', this.inv.collection()?.name ?? '');
-    if (n?.trim()) await this.inv.renameCollection(n);
-  }
   async removeCollection() {
     if (confirm(`¿Borrar la colección «${this.inv.collection()?.name}» y todas sus cartas?`)) await this.inv.deleteCollection();
   }

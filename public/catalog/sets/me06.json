@@ -1,0 +1,2593 @@
+{
+  "id": "me06",
+  "gameId": "pokemon",
+  "name": "Dominio Delta",
+  "language": "es",
+  "series": {
+    "id": "me",
+    "name": "Megaevolución"
+  },
+  "releaseDate": "2026-11-06",
+  "cardCount": {
+    "firstEd": 0,
+    "holo": 0,
+    "normal": 0,
+    "official": 103,
+    "reverse": 0,
+    "total": 141
+  },
+  "source": {
+    "provider": "tcgdex",
+    "setId": "me06",
+    "language": "es"
+  },
+  "availability": "available",
+  "groups": [
+    {
+      "key": "base",
+      "label": "Base 001–103"
+    },
+    {
+      "key": "secret",
+      "label": "Secretas"
+    }
+  ],
+  "modes": [
+    {
+      "key": "base",
+      "label": "Base Set",
+      "rule": {
+        "tags": [
+          "base"
+        ]
+      }
+    },
+    {
+      "key": "master",
+      "label": "Master Set",
+      "rule": {
+        "all": true
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "me06-001",
+      "num": "001/103",
+      "name": "Heracross",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/001/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-002",
+      "num": "002/103",
+      "name": "Surskit",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/002/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-003",
+      "num": "003/103",
+      "name": "Masquerain",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/003/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-004",
+      "num": "004/103",
+      "name": "Cacnea",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/004/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-005",
+      "num": "005/103",
+      "name": "Cacturne",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/005/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-006",
+      "num": "006/103",
+      "name": "Combee",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/006/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-007",
+      "num": "007/103",
+      "name": "Vespiquen",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/007/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-008",
+      "num": "008/103",
+      "name": "Shaymin",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/008/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-009",
+      "num": "009/103",
+      "name": "Virizion",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/009/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-010",
+      "num": "010/103",
+      "name": "Wimpod",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/010/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-011",
+      "num": "011/103",
+      "name": "Mega-Golisopod ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/011/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-012",
+      "num": "012/103",
+      "name": "Sprigatito",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/012/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-013",
+      "num": "013/103",
+      "name": "Floragato",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/013/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-014",
+      "num": "014/103",
+      "name": "Meowscarada ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/014/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-015",
+      "num": "015/103",
+      "name": "Smoliv",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/015/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-016",
+      "num": "016/103",
+      "name": "Dolliv",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/016/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-017",
+      "num": "017/103",
+      "name": "Arboliva",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/017/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-018",
+      "num": "018/103",
+      "name": "Growlithe",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/018/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-019",
+      "num": "019/103",
+      "name": "Arcanine",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/019/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-020",
+      "num": "020/103",
+      "name": "Magmar",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/020/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-021",
+      "num": "021/103",
+      "name": "Magmortar",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/021/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-022",
+      "num": "022/103",
+      "name": "Torkoal",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/022/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-023",
+      "num": "023/103",
+      "name": "Rotom Calor ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/023/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-024",
+      "num": "024/103",
+      "name": "Heatmor",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/024/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-025",
+      "num": "025/103",
+      "name": "Mantine",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/025/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-026",
+      "num": "026/103",
+      "name": "Kyogre",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/026/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-027",
+      "num": "027/103",
+      "name": "Frillish",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/027/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-028",
+      "num": "028/103",
+      "name": "Jellicent",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/028/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-029",
+      "num": "029/103",
+      "name": "Wishiwashi ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/029/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-030",
+      "num": "030/103",
+      "name": "Electabuzz",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/030/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-031",
+      "num": "031/103",
+      "name": "Electivire",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/031/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-032",
+      "num": "032/103",
+      "name": "Jolteon",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/032/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-033",
+      "num": "033/103",
+      "name": "Raikou ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/033/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-034",
+      "num": "034/103",
+      "name": "Rotom",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/034/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-035",
+      "num": "035/103",
+      "name": "Thundurus",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/035/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-036",
+      "num": "036/103",
+      "name": "Pincurchin",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/036/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-037",
+      "num": "037/103",
+      "name": "Pawmi",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/037/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-038",
+      "num": "038/103",
+      "name": "Pawmo",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/038/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-039",
+      "num": "039/103",
+      "name": "Pawmot",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/039/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-040",
+      "num": "040/103",
+      "name": "Wattrel",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/040/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-041",
+      "num": "041/103",
+      "name": "Kilowattrel",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/041/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-042",
+      "num": "042/103",
+      "name": "Miraidon",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/042/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-043",
+      "num": "043/103",
+      "name": "Drowzee",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/043/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-044",
+      "num": "044/103",
+      "name": "Hypno",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/044/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-045",
+      "num": "045/103",
+      "name": "Giratina",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/045/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-046",
+      "num": "046/103",
+      "name": "Golett",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/046/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-047",
+      "num": "047/103",
+      "name": "Mega-Golurk ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/047/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-048",
+      "num": "048/103",
+      "name": "Enamorus",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/048/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-049",
+      "num": "049/103",
+      "name": "Sandshrew",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/049/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-050",
+      "num": "050/103",
+      "name": "Sandslash",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/050/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-051",
+      "num": "051/103",
+      "name": "Onix",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/051/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-052",
+      "num": "052/103",
+      "name": "Steelix",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/052/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-053",
+      "num": "053/103",
+      "name": "Groudon",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/053/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-054",
+      "num": "054/103",
+      "name": "Landorus",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/054/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-055",
+      "num": "055/103",
+      "name": "Nidoran♀",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/055/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-056",
+      "num": "056/103",
+      "name": "Nidorina",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/056/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-057",
+      "num": "057/103",
+      "name": "Nidoqueen",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/057/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-058",
+      "num": "058/103",
+      "name": "Spinarak",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/058/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-059",
+      "num": "059/103",
+      "name": "Ariados",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/059/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-060",
+      "num": "060/103",
+      "name": "Sableye",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/060/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-061",
+      "num": "061/103",
+      "name": "Carvanha",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/061/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-062",
+      "num": "062/103",
+      "name": "Sharpedo",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/062/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-063",
+      "num": "063/103",
+      "name": "Darkrai",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/063/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-064",
+      "num": "064/103",
+      "name": "Purrloin",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/064/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-065",
+      "num": "065/103",
+      "name": "Liepard",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/065/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-066",
+      "num": "066/103",
+      "name": "Zorua",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/066/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-067",
+      "num": "067/103",
+      "name": "Zoroark ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/067/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-068",
+      "num": "068/103",
+      "name": "Inkay",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/068/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-069",
+      "num": "069/103",
+      "name": "Mega-Malamar ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/069/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-070",
+      "num": "070/103",
+      "name": "Morpeko",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/070/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-071",
+      "num": "071/103",
+      "name": "Zarude",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/071/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-072",
+      "num": "072/103",
+      "name": "Druddigon",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/072/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-073",
+      "num": "073/103",
+      "name": "Jangmo-o",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/073/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-074",
+      "num": "074/103",
+      "name": "Hakamo-o",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/074/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-075",
+      "num": "075/103",
+      "name": "Kommo-o",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/075/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-076",
+      "num": "076/103",
+      "name": "Cyclizar",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/076/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-077",
+      "num": "077/103",
+      "name": "Tauros",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/077/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-078",
+      "num": "078/103",
+      "name": "Eevee",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/078/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-079",
+      "num": "079/103",
+      "name": "Delibird",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/079/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-080",
+      "num": "080/103",
+      "name": "Azurill",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/080/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-081",
+      "num": "081/103",
+      "name": "Swablu",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/081/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-082",
+      "num": "082/103",
+      "name": "Altaria",
+      "rarity": "Rara",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/082/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-083",
+      "num": "083/103",
+      "name": "Kecleon",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/083/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-084",
+      "num": "084/103",
+      "name": "Mega-Rayquaza ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/084/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-085",
+      "num": "085/103",
+      "name": "Tornadus",
+      "rarity": "Uncommon",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/085/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-086",
+      "num": "086/103",
+      "name": "Fletchling",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/086/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-087",
+      "num": "087/103",
+      "name": "Fletchinder",
+      "rarity": "Común",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/087/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-088",
+      "num": "088/103",
+      "name": "Talonflame ex",
+      "rarity": "Rara Doble",
+      "category": "Pokémon",
+      "tags": [
+        "base",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/088/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-089",
+      "num": "089/103",
+      "name": "Perico",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/089/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-090",
+      "num": "090/103",
+      "name": "Lámpara de Aventuras",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/090/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-091",
+      "num": "091/103",
+      "name": "Chaleco a Medida",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/091/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-092",
+      "num": "092/103",
+      "name": "Entusiasmo de Emcee",
+      "rarity": "Común",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/092/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-093",
+      "num": "093/103",
+      "name": "Grisel",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/093/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-094",
+      "num": "094/103",
+      "name": "Piroducto Legendario",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/094/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-095",
+      "num": "095/103",
+      "name": "Piroducto Legendario",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/095/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-096",
+      "num": "096/103",
+      "name": "Pico Legendario",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/096/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-097",
+      "num": "097/103",
+      "name": "Pico Legendario",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/097/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-098",
+      "num": "098/103",
+      "name": "Abismo Legendario",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/098/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-099",
+      "num": "099/103",
+      "name": "Abismo Legendario",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/099/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-100",
+      "num": "100/103",
+      "name": "Gorro de Mega-Rayquaza",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/100/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-101",
+      "num": "101/103",
+      "name": "Bolita de Arroz Sabrosa",
+      "rarity": "Común",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/101/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-102",
+      "num": "102/103",
+      "name": "Entrenamiento de Vito y Leti",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/102/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-103",
+      "num": "103/103",
+      "name": "Confianza de Tristana",
+      "rarity": "Uncommon",
+      "category": "Entrenador",
+      "tags": [
+        "base",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/103/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-104",
+      "num": "104/103",
+      "name": "Masquerain",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/104/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-105",
+      "num": "105/103",
+      "name": "Sprigatito",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/105/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-106",
+      "num": "106/103",
+      "name": "Growlithe",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/106/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-107",
+      "num": "107/103",
+      "name": "Magmortar",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/107/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-108",
+      "num": "108/103",
+      "name": "Electivire",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/108/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-109",
+      "num": "109/103",
+      "name": "Pincurchin",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/109/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-110",
+      "num": "110/103",
+      "name": "Enamorus",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/110/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-111",
+      "num": "111/103",
+      "name": "Groudon",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/111/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-112",
+      "num": "112/103",
+      "name": "Zorua",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/112/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-113",
+      "num": "113/103",
+      "name": "Inkay",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/113/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-114",
+      "num": "114/103",
+      "name": "Eevee",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/114/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-115",
+      "num": "115/103",
+      "name": "Azurill",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/115/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-116",
+      "num": "116/103",
+      "name": "Altaria",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/116/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-117",
+      "num": "117/103",
+      "name": "Kecleon",
+      "rarity": "Rara Ilustración",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/117/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-118",
+      "num": "118/103",
+      "name": "Mega-Golisopod ex",
+      "rarity": "Ultra Rara",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/118/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-119",
+      "num": "119/103",
+      "name": "Rotom Calor ex",
+      "rarity": "Ultra Rara",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/119/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-120",
+      "num": "120/103",
+      "name": "Wishiwashi ex",
+      "rarity": "Ultra Rara",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/120/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-121",
+      "num": "121/103",
+      "name": "Raikou ex",
+      "rarity": "Ultra Rara",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/121/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-122",
+      "num": "122/103",
+      "name": "Mega-Golurk ex",
+      "rarity": "Ultra Rara",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/122/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-123",
+      "num": "123/103",
+      "name": "Mega-Malamar ex",
+      "rarity": "Ultra Rara",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/123/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-124",
+      "num": "124/103",
+      "name": "Talonflame ex",
+      "rarity": "Ultra Rara",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/124/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-125",
+      "num": "125/103",
+      "name": "Perico",
+      "rarity": "Ultra Rara",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/125/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-126",
+      "num": "126/103",
+      "name": "Lámpara de Aventuras",
+      "rarity": "Ultra Rara",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/126/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-127",
+      "num": "127/103",
+      "name": "Chaleco a Medida",
+      "rarity": "Ultra Rara",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/127/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-128",
+      "num": "128/103",
+      "name": "Entusiasmo de Emcee",
+      "rarity": "Ultra Rara",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/128/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-129",
+      "num": "129/103",
+      "name": "Capturapokémon",
+      "rarity": "Ultra Rara",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/129/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-130",
+      "num": "130/103",
+      "name": "Entrenamiento de Vito y Leti",
+      "rarity": "Ultra Rara",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/130/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-131",
+      "num": "131/103",
+      "name": "Confianza de Tristana",
+      "rarity": "Ultra Rara",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/131/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-132",
+      "num": "132/103",
+      "name": "Energía Water Burbujeante",
+      "rarity": "Ultra Rara",
+      "category": "Energía",
+      "tags": [
+        "secret",
+        "energía"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/132/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-133",
+      "num": "133/103",
+      "name": "Energía Grass Creciente",
+      "rarity": "Ultra Rara",
+      "category": "Energía",
+      "tags": [
+        "secret",
+        "energía"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/133/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-134",
+      "num": "134/103",
+      "name": "Energía Fire Nitro",
+      "rarity": "Ultra Rara",
+      "category": "Energía",
+      "tags": [
+        "secret",
+        "energía"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/134/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-135",
+      "num": "135/103",
+      "name": "Mega-Golisopod ex",
+      "rarity": "Rara Ilustración Especial",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/135/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-136",
+      "num": "136/103",
+      "name": "Raikou ex",
+      "rarity": "Rara Ilustración Especial",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/136/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-137",
+      "num": "137/103",
+      "name": "Mega-Golurk ex",
+      "rarity": "Rara Ilustración Especial",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/137/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-138",
+      "num": "138/103",
+      "name": "Mega-Rayquaza ex",
+      "rarity": "Rara Ilustración Especial",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/138/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-139",
+      "num": "139/103",
+      "name": "Perico",
+      "rarity": "Rara Ilustración Especial",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/139/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-140",
+      "num": "140/103",
+      "name": "Confianza de Tristana",
+      "rarity": "Rara Ilustración Especial",
+      "category": "Entrenador",
+      "tags": [
+        "secret",
+        "entrenador"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/140/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    },
+    {
+      "id": "me06-141",
+      "num": "141/103",
+      "name": "Mega-Rayquaza ex",
+      "rarity": "Mega Hiper Rara",
+      "category": "Pokémon",
+      "tags": [
+        "secret",
+        "pokémon"
+      ],
+      "img": "https://assets.tcgdex.net/es/me/me06/141/low.webp",
+      "variants": [
+        {
+          "key": "normal",
+          "label": "Normal"
+        }
+      ]
+    }
+  ]
+}

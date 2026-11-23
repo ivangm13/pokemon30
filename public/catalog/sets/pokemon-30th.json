@@ -1,0 +1,2083 @@
+{
+  "id": "pokemon-30th",
+  "gameId": "pokemon",
+  "name": "30th Celebration",
+  "language": "EN",
+  "groups": [
+    {
+      "key": "main",
+      "label": "Principal"
+    },
+    {
+      "key": "pikachu",
+      "label": "Pikachu"
+    },
+    {
+      "key": "secret",
+      "label": "Secretas"
+    },
+    {
+      "key": "rgb",
+      "label": "Mew RGB"
+    },
+    {
+      "key": "classic",
+      "label": "Classic"
+    },
+    {
+      "key": "energy",
+      "label": "Energías"
+    }
+  ],
+  "modes": [
+    {
+      "key": "base",
+      "label": "Base Set",
+      "rule": {
+        "tags": [
+          "main",
+          "pikachu"
+        ]
+      }
+    },
+    {
+      "key": "master",
+      "label": "Master Set",
+      "rule": {
+        "all": true
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "m1",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e001.webp",
+      "num": "001/128",
+      "name": "Exeggcute",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m2",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e002.webp",
+      "num": "002/128",
+      "name": "Alolan Exeggutor",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m3",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e003.webp",
+      "num": "003/128",
+      "name": "Volbeat",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m4",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e004.webp",
+      "num": "004/128",
+      "name": "Illumise",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m5",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e005.webp",
+      "num": "005/128",
+      "name": "Tropius",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m6",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e006.webp",
+      "num": "006/128",
+      "name": "Cherubi",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m7",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e007.webp",
+      "num": "007/128",
+      "name": "Cherrim",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m8",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e008.webp",
+      "num": "008/128",
+      "name": "Vivillon",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m9",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e009.webp",
+      "num": "009/128",
+      "name": "Vulpix",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m10",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e010.webp",
+      "num": "010/128",
+      "name": "Ninetales",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m11",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_011.webp",
+      "num": "011/128",
+      "name": "Moltres",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m12",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_012.webp",
+      "num": "012/128",
+      "name": "Ho-Oh",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m13",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_013.webp",
+      "num": "013/128",
+      "name": "Victini",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m14",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e014.webp",
+      "num": "014/128",
+      "name": "Reshiram",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m15",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_015.webp",
+      "num": "015/128",
+      "name": "Fuecoco ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m16",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_016.webp",
+      "num": "016/128",
+      "name": "Slowpoke",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m17",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e017.webp",
+      "num": "017/128",
+      "name": "Lapras",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m18",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_018.webp",
+      "num": "018/128",
+      "name": "Articuno",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m19",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e019.webp",
+      "num": "019/128",
+      "name": "Kyogre",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m20",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e020.webp",
+      "num": "020/128",
+      "name": "Palkia",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m21",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/cel30/30th-21_greninja-ex.webp",
+      "num": "021/128",
+      "name": "Greninja ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m22",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e022.webp",
+      "num": "022/128",
+      "name": "Wishiwashi",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m23",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_023.webp",
+      "num": "023/128",
+      "name": "Pikachu 1/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m24",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e024.webp",
+      "num": "024/128",
+      "name": "Pikachu 2/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m25",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_025.webp",
+      "num": "025/128",
+      "name": "Pikachu 3/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m26",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_026.webp",
+      "num": "026/128",
+      "name": "Pikachu 4/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m27",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e027.webp",
+      "num": "027/128",
+      "name": "Pikachu 5/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m28",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_28.webp",
+      "num": "028/128",
+      "name": "Pikachu 6/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m29",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e029.webp",
+      "num": "029/128",
+      "name": "Pikachu 7/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m30",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_030.webp",
+      "num": "030/128",
+      "name": "Pikachu 8/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m31",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e031.webp",
+      "num": "031/128",
+      "name": "Pikachu 9/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m32",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_032.webp",
+      "num": "032/128",
+      "name": "Pikachu 10/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m33",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_033.webp",
+      "num": "033/128",
+      "name": "Pikachu 11/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m34",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_034.webp",
+      "num": "034/128",
+      "name": "Pikachu 12/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m35",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e035.webp",
+      "num": "035/128",
+      "name": "Pikachu 13/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m36",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th-14_pikachu.webp",
+      "num": "036/128",
+      "name": "Pikachu 14/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m37",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th-15_pikachu.webp",
+      "num": "037/128",
+      "name": "Pikachu 15/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m38",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_038.webp",
+      "num": "038/128",
+      "name": "Pikachu 16/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m39",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_039.webp",
+      "num": "039/128",
+      "name": "Pikachu 17/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m40",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_040.webp",
+      "num": "040/128",
+      "name": "Pikachu 18/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m41",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_041.webp",
+      "num": "041/128",
+      "name": "Pikachu 19/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m42",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_42.webp",
+      "num": "042/128",
+      "name": "Pikachu 20/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m43",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_043.webp",
+      "num": "043/128",
+      "name": "Pikachu 21/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m44",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_044.webp",
+      "num": "044/128",
+      "name": "Pikachu 22/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m45",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e045.webp",
+      "num": "045/128",
+      "name": "Pikachu 23/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m46",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e046.webp",
+      "num": "046/128",
+      "name": "Pikachu 24/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m47",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th-25_pikachu.webp",
+      "num": "047/128",
+      "name": "Pikachu 25/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m48",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e048.webp",
+      "num": "048/128",
+      "name": "Pikachu 26/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m49",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_049.webp",
+      "num": "049/128",
+      "name": "Pikachu 27/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m50",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_50.webp",
+      "num": "050/128",
+      "name": "Pikachu 28/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m51",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e051.webp",
+      "num": "051/128",
+      "name": "Pikachu 29/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m52",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e052.webp",
+      "num": "052/128",
+      "name": "Pikachu 30/30",
+      "rarity": "Pikachu Rare",
+      "tags": [
+        "pikachu"
+      ]
+    },
+    {
+      "id": "m53",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_053.webp",
+      "num": "053/128",
+      "name": "Pikachu ex · Day",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m54",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_054.webp",
+      "num": "054/128",
+      "name": "Pikachu ex · Night",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m55",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_055.webp",
+      "num": "055/128",
+      "name": "Zapdos",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m56",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e056.webp",
+      "num": "056/128",
+      "name": "Zekrom",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m57",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_057.webp",
+      "num": "057/128",
+      "name": "Zeraora",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m58",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e058.webp",
+      "num": "058/128",
+      "name": "Toxel",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m59",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e059.webp",
+      "num": "059/128",
+      "name": "Toxtricity",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m60",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e060.webp",
+      "num": "060/128",
+      "name": "Toxtricity",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m61",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e061.webp",
+      "num": "061/128",
+      "name": "Morpeko",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m62",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e062.webp",
+      "num": "062/128",
+      "name": "Miraidon",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m63",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e063.webp",
+      "num": "063/128",
+      "name": "Mewtwo",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m64",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e064.webp",
+      "num": "064/128",
+      "name": "Mewtwo ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m65",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e065.webp",
+      "num": "065/128",
+      "name": "Mew",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m66",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e066.webp",
+      "num": "066/128",
+      "name": "Mew ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m67",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_067.webp",
+      "num": "067/128",
+      "name": "Marill",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m68",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e068.webp",
+      "num": "068/128",
+      "name": "Azumarill",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m69",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/cel30/30th-69_espeon.webp",
+      "num": "069/128",
+      "name": "Espeon",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m70",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_070.webp",
+      "num": "070/128",
+      "name": "Espeon ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m71",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/cel30/30th-71_sylveon-ex.webp",
+      "num": "071/128",
+      "name": "Sylveon ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m72",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e072.webp",
+      "num": "072/128",
+      "name": "Unown",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m73",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e073.webp",
+      "num": "073/128",
+      "name": "Drifloon",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m74",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e074.webp",
+      "num": "074/128",
+      "name": "Cresselia",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m75",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e075.webp",
+      "num": "075/128",
+      "name": "Chandelure",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m76",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e076.webp",
+      "num": "076/128",
+      "name": "Xerneas",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m77",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e077.webp",
+      "num": "077/128",
+      "name": "Comfey",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m78",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e078.webp",
+      "num": "078/128",
+      "name": "Cosmog",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m79",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e079.webp",
+      "num": "079/128",
+      "name": "Cosmoem",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m80",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e080.webp",
+      "num": "080/128",
+      "name": "Lunala",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m81",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e081.webp",
+      "num": "081/128",
+      "name": "Gimmighoul",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m82",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e082.webp",
+      "num": "082/128",
+      "name": "Groudon",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m83",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e083.webp",
+      "num": "083/128",
+      "name": "Lucario",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m84",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e084.webp",
+      "num": "084/128",
+      "name": "Seismitoad",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m85",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e085.webp",
+      "num": "085/128",
+      "name": "Lycanroc",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m86",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e086.webp",
+      "num": "086/128",
+      "name": "Koraidon",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m87",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e087.webp",
+      "num": "087/128",
+      "name": "Nidoran ♀",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m88",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_88.webp",
+      "num": "088/128",
+      "name": "Nidorina",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m89",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_089-Alolan-Meowth.webp",
+      "num": "089/128",
+      "name": "Alolan Meowth",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m90",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e090.webp",
+      "num": "090/128",
+      "name": "Gengar ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m91",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/cel30/30th-91_umbreon.webp",
+      "num": "091/128",
+      "name": "Umbreon",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m92",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_092.webp",
+      "num": "092/128",
+      "name": "Umbreon ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m93",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e093.webp",
+      "num": "093/128",
+      "name": "Murkrow",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m94",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e094.webp",
+      "num": "094/128",
+      "name": "Scraggy",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m95",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e095.webp",
+      "num": "095/128",
+      "name": "Zorua",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m96",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e096.webp",
+      "num": "096/128",
+      "name": "Zoroark",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m97",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e097.webp",
+      "num": "097/128",
+      "name": "Deino",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m98",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e098.webp",
+      "num": "098/128",
+      "name": "Zweilous",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m99",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e099.webp",
+      "num": "099/128",
+      "name": "Hydreigon",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m100",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e100.webp",
+      "num": "100/128",
+      "name": "Yveltal",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m101",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e101.webp",
+      "num": "101/128",
+      "name": "Galarian Meowth",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m102",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_102.webp",
+      "num": "102/128",
+      "name": "Jirachi ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m103",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e103.webp",
+      "num": "103/128",
+      "name": "Dialga",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m104",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e104.webp",
+      "num": "104/128",
+      "name": "Ferrothorn",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m105",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e105.webp",
+      "num": "105/128",
+      "name": "Solgaleo",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m106",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e106.webp",
+      "num": "106/128",
+      "name": "Zacian",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m107",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e107.webp",
+      "num": "107/128",
+      "name": "Zamazenta",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m108",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e108.webp",
+      "num": "108/128",
+      "name": "Gholdengo",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m109",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e109.webp",
+      "num": "109/128",
+      "name": "Salamence ex",
+      "rarity": "Double Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m110",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e110.webp",
+      "num": "110/128",
+      "name": "Jangmo-o",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m111",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e111.webp",
+      "num": "111/128",
+      "name": "Hakamo-o",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m112",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e112.webp",
+      "num": "112/128",
+      "name": "Kommo-o",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m113",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_113-Meowth.webp",
+      "num": "113/128",
+      "name": "Meowth",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m114",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_114.webp",
+      "num": "114/128",
+      "name": "Kangaskhan",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m115",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e115.webp",
+      "num": "115/128",
+      "name": "Ditto",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m116",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_116.webp",
+      "num": "116/128",
+      "name": "Eevee",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m117",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_117.webp",
+      "num": "117/128",
+      "name": "Eevee",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m118",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_118.webp",
+      "num": "118/128",
+      "name": "Eevee",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m119",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e119.webp",
+      "num": "119/128",
+      "name": "Snorlax",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m120",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e120.webp",
+      "num": "120/128",
+      "name": "Igglybuff",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m121",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_121.webp",
+      "num": "121/128",
+      "name": "Lugia",
+      "rarity": "Rare",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m122",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e122.webp",
+      "num": "122/128",
+      "name": "Hisuian Zorua",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m123",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e123.webp",
+      "num": "123/128",
+      "name": "Hisuian Zoroark",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m124",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e124.webp",
+      "num": "124/128",
+      "name": "Minior",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m125",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e125.webp",
+      "num": "125/128",
+      "name": "Maushold",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m126",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e126.webp",
+      "num": "126/128",
+      "name": "Poké Pad",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m127",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e127.webp",
+      "num": "127/128",
+      "name": "Switch",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "m128",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e128.webp",
+      "num": "128/128",
+      "name": "Ultra Ball",
+      "rarity": "Common",
+      "tags": [
+        "main"
+      ]
+    },
+    {
+      "id": "s129",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e129.webp",
+      "num": "129/128",
+      "name": "Alolan Exeggutor",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s130",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e130.webp",
+      "num": "130/128",
+      "name": "Moltres",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s131",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/cel30/30th-131_lapras.webp",
+      "num": "131/128",
+      "name": "Lapras",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s132",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e132.webp",
+      "num": "132/128",
+      "name": "Articuno",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s133",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e133.webp",
+      "num": "133/128",
+      "name": "Zapdos",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s134",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_134.webp",
+      "num": "134/128",
+      "name": "Toxtricity",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s135",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e135.webp",
+      "num": "135/128",
+      "name": "Morpeko",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s136",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/cel30/30th-136_drifloon.webp",
+      "num": "136/128",
+      "name": "Drifloon",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s137",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e137.webp",
+      "num": "137/128",
+      "name": "Chandelure",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s138",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/cel30/30th-138_lycanroc.webp",
+      "num": "138/128",
+      "name": "Lycanroc",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s139",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_139-Alolan-Meowth.webp",
+      "num": "139/128",
+      "name": "Alolan Meowth",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s140",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e140.webp",
+      "num": "140/128",
+      "name": "Scraggy",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s141",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_141.webp",
+      "num": "141/128",
+      "name": "Galarian Meowth",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s142",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e142.webp",
+      "num": "142/128",
+      "name": "Gholdengo",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s143",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e143.webp",
+      "num": "143/128",
+      "name": "Kommo-o",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s144",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_144-Meowth.webp",
+      "num": "144/128",
+      "name": "Meowth",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s145",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/cel30/30th-145_zorua.webp",
+      "num": "145/128",
+      "name": "Hisuian Zorua",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s146",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e146.webp",
+      "num": "146/128",
+      "name": "Maushold",
+      "rarity": "Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s147",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e147.webp",
+      "num": "147/128",
+      "name": "Fuecoco ex",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s148",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_148.webp",
+      "num": "148/128",
+      "name": "Greninja ex",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s149",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_149.webp",
+      "num": "149/128",
+      "name": "Pikachu ex · Day",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s150",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_150.webp",
+      "num": "150/128",
+      "name": "Pikachu ex · Night",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s151",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/articles/30th-most-expensive/en-151.webp",
+      "num": "151/128",
+      "name": "Mewtwo ex",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s152",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/articles/30th-most-expensive/en-152.webp",
+      "num": "152/128",
+      "name": "Mew ex",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s153",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e153.webp",
+      "num": "153/128",
+      "name": "Sylveon ex",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s154",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/articles/30th-most-expensive/en-154.webp",
+      "num": "154/128",
+      "name": "Gengar ex",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s155",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e155.webp",
+      "num": "155/128",
+      "name": "Jirachi ex",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s156",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_156.webp",
+      "num": "156/128",
+      "name": "Salamence ex",
+      "rarity": "Special Illustration Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s157",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e157.webp",
+      "num": "157/128",
+      "name": "Mewtwo ex",
+      "rarity": "Futuristic Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "s158",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/e158.webp",
+      "num": "158/128",
+      "name": "Mew ex",
+      "rarity": "Futuristic Rare",
+      "tags": [
+        "secret"
+      ]
+    },
+    {
+      "id": "rgbR",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/articles/rgb-mew-red.webp",
+      "num": "R/RGB",
+      "name": "Mew (Rojo)",
+      "rarity": "RGB Rare",
+      "tags": [
+        "rgb"
+      ]
+    },
+    {
+      "id": "rgbG",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/articles/rgb-mew-green.webp",
+      "num": "G/RGB",
+      "name": "Mew (Verde)",
+      "rarity": "RGB Rare",
+      "tags": [
+        "rgb"
+      ]
+    },
+    {
+      "id": "rgbB",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/articles/rgb-mew-blue.webp",
+      "num": "B/RGB",
+      "name": "Mew (Azul)",
+      "rarity": "RGB Rare",
+      "tags": [
+        "rgb"
+      ]
+    },
+    {
+      "id": "c0",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/base1/base1-58_pikachu.webp",
+      "num": "58/102",
+      "name": "Pikachu",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Base Set"
+    },
+    {
+      "id": "c1",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30tha_charizard.webp",
+      "num": "4/102",
+      "name": "Charizard",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Base Set"
+    },
+    {
+      "id": "c2",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/gym1/gym1-18_misty.webp",
+      "num": "18/132",
+      "name": "Misty",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Gym Heroes"
+    },
+    {
+      "id": "c3",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/gym2/gym2-69_erikas-jigglypuff.webp",
+      "num": "69/132",
+      "name": "Erika’s Jigglypuff",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Gym Challenge"
+    },
+    {
+      "id": "c4",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/neo1/neo1-25_sneasel.webp",
+      "num": "25/111",
+      "name": "Sneasel",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Neo Genesis"
+    },
+    {
+      "id": "c5",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/neo4/neo4-106_shining-celebi.webp",
+      "num": "106/105",
+      "name": "Shining Celebi",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Neo Destiny"
+    },
+    {
+      "id": "c6",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_EN_149_old.webp",
+      "num": "149/147",
+      "name": "“Crystal” Lugia",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Aquapolis"
+    },
+    {
+      "id": "c7",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/ex1/ex1-5_delcatty.webp",
+      "num": "5/109",
+      "name": "Delcatty",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "EX Ruby & Sapphire"
+    },
+    {
+      "id": "c8",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/ex7/ex7-19_dark-tyranitar.webp",
+      "num": "19/109",
+      "name": "Dark Tyranitar",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "EX Team Rocket Returns"
+    },
+    {
+      "id": "c9",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/ex10/ex10-108_scizor-ex.webp",
+      "num": "108/115",
+      "name": "Scizor ex",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "EX Unseen Forces"
+    },
+    {
+      "id": "c10",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/ex11/ex11-11_metagross-%CE%B4.webp",
+      "num": "11/113",
+      "name": "Metagross δ",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "EX Delta Species"
+    },
+    {
+      "id": "c11",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/dp4/dp4-106_palkia.webp",
+      "num": "106/106",
+      "name": "Palkia LV.X",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Great Encounters"
+    },
+    {
+      "id": "c12",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/dp6/dp6-43_uxie.webp",
+      "num": "43/146",
+      "name": "Uxie",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Legends Awakened"
+    },
+    {
+      "id": "c13",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/pl1/pl1-47_crobat-g.webp",
+      "num": "47/127",
+      "name": "Crobat G",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Platinum"
+    },
+    {
+      "id": "c14",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/hgss4/hgss4-94_gengar.webp",
+      "num": "94/102",
+      "name": "Gengar Prime",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "HS Triumphant"
+    },
+    {
+      "id": "c15",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/hgss4/hgss4-99_darkrai-cresselia-legend.webp",
+      "num": "99/102",
+      "name": "Darkrai & Cresselia LEGEND (top)",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "HS Triumphant"
+    },
+    {
+      "id": "c16",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/hgss4/hgss4-100_darkrai-cresselia-legend.webp",
+      "num": "100/102",
+      "name": "Darkrai & Cresselia LEGEND (bottom)",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "HS Triumphant"
+    },
+    {
+      "id": "c17",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/bw3/bw3-101_n.webp",
+      "num": "101/101",
+      "name": "N",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Noble Victories"
+    },
+    {
+      "id": "c18",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/bw6/bw6-85_rayquaza-ex.webp",
+      "num": "85/124",
+      "name": "Rayquaza-EX",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Dragons Exalted"
+    },
+    {
+      "id": "c19",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/bw10/bw10-11_genesect-ex.webp",
+      "num": "11/101",
+      "name": "Genesect-EX",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Plasma Blast"
+    },
+    {
+      "id": "c20",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/xy5/xy5-106_m-gardevoir-ex.webp",
+      "num": "106/160",
+      "name": "M Gardevoir-EX",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Primal Clash"
+    },
+    {
+      "id": "c21",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/xy9/xy9-41_greninja-break.webp",
+      "num": "41/122",
+      "name": "Greninja BREAK",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "BREAKpoint"
+    },
+    {
+      "id": "c22",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/sm1/sm1-89_solgaleo-gx.webp",
+      "num": "89/149",
+      "name": "Solgaleo-GX",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Sun & Moon"
+    },
+    {
+      "id": "c23",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/sm4/sm4-57_buzzwole-gx.webp",
+      "num": "57/111",
+      "name": "Buzzwole-GX",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Crimson Invasion"
+    },
+    {
+      "id": "c24",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30tha_pikachu-zekrom-gx.webp",
+      "num": "33/181",
+      "name": "Pikachu & Zekrom-GX",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Team Up"
+    },
+    {
+      "id": "c25",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/swsh1/swsh1-138_zacian-v.webp",
+      "num": "138/202",
+      "name": "Zacian V",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Sword & Shield"
+    },
+    {
+      "id": "c26",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/swsh4/swsh4-50_raikou.webp",
+      "num": "050/185",
+      "name": "Raikou",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Vivid Voltage"
+    },
+    {
+      "id": "c27",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/swsh8/swsh8-114_mew-vmax.webp",
+      "num": "114/264",
+      "name": "Mew VMAX",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Fusion Strike"
+    },
+    {
+      "id": "c28",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/swsh9/swsh9-123_arceus-vstar.webp",
+      "num": "123/172",
+      "name": "Arceus VSTAR",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Brilliant Stars"
+    },
+    {
+      "id": "c29",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/tcgdex_cards_small/sv02/sv02-203_magikarp.webp",
+      "num": "203/193",
+      "name": "Magikarp",
+      "rarity": "Classic Collection",
+      "tags": [
+        "classic"
+      ],
+      "note": "Paldea Evolved"
+    },
+    {
+      "id": "e0",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_energy_009.webp",
+      "num": "MEE 09",
+      "name": "Basic Grass Energy",
+      "rarity": "Basic Energy",
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "id": "e1",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_energy_010.webp",
+      "num": "MEE 10",
+      "name": "Basic Fire Energy",
+      "rarity": "Basic Energy",
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "id": "e2",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_energy_011.webp",
+      "num": "MEE 11",
+      "name": "Basic Water Energy",
+      "rarity": "Basic Energy",
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "id": "e3",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_energy_012.webp",
+      "num": "MEE 12",
+      "name": "Basic Lightning Energy",
+      "rarity": "Basic Energy",
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "id": "e4",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_energy_013.webp",
+      "num": "MEE 13",
+      "name": "Basic Psychic Energy",
+      "rarity": "Basic Energy",
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "id": "e5",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_energy_014.webp",
+      "num": "MEE 14",
+      "name": "Basic Fighting Energy",
+      "rarity": "Basic Energy",
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "id": "e6",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_energy_015.webp",
+      "num": "MEE 15",
+      "name": "Basic Darkness Energy",
+      "rarity": "Basic Energy",
+      "tags": [
+        "energy"
+      ]
+    },
+    {
+      "id": "e7",
+      "img": "https://bills-archive.nyc3.cdn.digitaloceanspaces.com/assets/30th-thumbs/30th_energy_016.webp",
+      "num": "MEE 16",
+      "name": "Basic Metal Energy",
+      "rarity": "Basic Energy",
+      "tags": [
+        "energy"
+      ]
+    }
+  ],
+  "series": {
+    "id": "me",
+    "name": "Megaevolución"
+  },
+  "releaseDate": "2026-09-16",
+  "cardCount": {
+    "official": 128,
+    "total": 199
+  },
+  "availability": "available"
+}

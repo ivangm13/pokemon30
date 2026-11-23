@@ -13,7 +13,15 @@
       "name": "assets",
       "installMode": "prefetch",
       "resources": {
-        "files": ["/manifest.webmanifest", "/icons/**"]
+        "files": ["/manifest.webmanifest", "/icons/**", "/assets/**"]
+      }
+    },
+    {
+      "name": "catalog",
+      "installMode": "lazy",
+      "updateMode": "lazy",
+      "resources": {
+        "files": ["/catalog/**"]
       }
     }
   ]

@@ -8,6 +8,7 @@ export interface Card {
   tags: string[];        // etiquetas que usan los grupos y las reglas (main, secret, ...)
   img?: string;
   note?: string;
+  category?: string;
   variants?: Variant[];  // si no existe, la carta tiene una única variante "normal"
 }
 
@@ -20,11 +21,30 @@ export interface CardSet {
   gameId: string;
   name: string;
   language?: string;                          // idioma de la edición (EN, ES...)
+  series?: { id: string; name: string };
+  releaseDate?: string;
+  logo?: string;
+  symbol?: string;
+  cardCount?: { firstEd?: number; holo?: number; normal?: number; official?: number; reverse?: number; total?: number };
+  source?: { provider: string; setId: string; language: string };
+  availability?: 'available' | 'cataloguing' | 'unavailable';
   groups: { key: string; label: string }[];  // pestañas de filtro de la expansión
   modes: Mode[];                              // Base Set, Master Set... definidos por expansión
   cards: Card[];
 }
 export interface Game { id: string; name: string; }
+
+/** Manifiesto global liviano; el contenido de cartas se descarga por expansión. */
+export type CatalogSetSummary = Omit<CardSet, 'cards'> & {
+  assetPath: string;
+  pricePath?: string;
+};
+
+export interface CatalogManifest {
+  version: number;
+  games: Game[];
+  sets: CatalogSetSummary[];
+}
 
 export const NORMAL: Variant[] = [{ key: 'normal', label: 'Normal' }];
 export const variantsOf = (c: Card) => c.variants ?? NORMAL;
